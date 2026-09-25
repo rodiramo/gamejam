@@ -4,3 +4,7 @@
 
 [node name="RythmManager" type="Node" unique_id=1274013353]
 script = ExtResource("1_8esvg")
+
+[node name="Timer" type="Timer" parent="." unique_id=1846078901]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bes7wh2aww4hl" path="res://scenes/rythm_manager.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cga4qxjihgg3f" path="res://scenes/grid.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://cp85rll4tblkg" path="res://scenes/hud.tscn" id="6_2r41h"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
@@ -18,3 +19,6 @@ script = ExtResource("1_w8frs")
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
+
+[node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager") instance=ExtResource("6_2r41h")]
+rythm_manager = NodePath("../RythmManager")
