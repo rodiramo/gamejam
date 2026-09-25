@@ -6,9 +6,15 @@ enum State{
 	PAUSED
 }
 
+@export var config: LevelConfig
+
 @onready var rythm_manager: RythmManager = $RythmManager
 
 var _state: State = State.PAUSED
+
+
+func _ready() -> void:
+	self.rythm_manager.initialize(config)
 
 
 func _process(_delta: float) -> void:
