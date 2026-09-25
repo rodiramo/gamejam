@@ -1,15 +1,7 @@
 [gd_scene format=3 uid="uid://btbvd2gfedrgl"]
 
-[ext_resource type="Script" uid="uid://pxxithxf0i6x" path="res://scripts/player.gd" id="1_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://b3qj17pp21nr8" path="res://assets/sprites/images.jpeg" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://irkjclxyx380" path="res://scenes/level.tscn" id="1_o5qli"]
 
-[node name="main" type="Node2D" unique_id=1258310054]
+[node name="Main" type="Node2D" unique_id=1258310054]
 
-[node name="Player" type="StaticBody2D" parent="." unique_id=1767594461]
-script = ExtResource("1_0wfyh")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1768565314]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_o5qli")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=16177132]
+[node name="Level" parent="." unique_id=1064891971 instance=ExtResource("1_o5qli")]
