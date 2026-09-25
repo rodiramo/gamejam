@@ -13,7 +13,8 @@ script = ExtResource("1_w8frs")
 
 [node name="BulletManager" parent="." unique_id=2103513074 instance=ExtResource("3_mx8sn")]
 
-[node name="Player" parent="." unique_id=517324794 instance=ExtResource("1_2q6dc")]
+[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid") instance=ExtResource("1_2q6dc")]
+grid = NodePath("../Grid")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 
