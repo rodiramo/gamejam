@@ -4,3 +4,6 @@
 
 [node name="Grid" type="Node2D" unique_id=628514153]
 script = ExtResource("1_t5fjg")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=290290872]
+position = Vector2(-577, -120)
