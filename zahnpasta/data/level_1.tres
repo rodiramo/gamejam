@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://blkydxc26by1p"]
+
+[ext_resource type="Script" uid="uid://bxwm6geyls5vf" path="res://data/level_config.gd" id="1_jbuu6"]
+[ext_resource type="Script" uid="uid://cu06of5pek0a3" path="res://data/bpm_section.gd" id="1_w2u4b"]
+
+[sub_resource type="Resource" id="Resource_2r41h"]
+script = ExtResource("1_w2u4b")
+bpm = 60.0
+beats = 6
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_w2u4b"]
+script = ExtResource("1_w2u4b")
+bpm = 180.0
+beats = 30
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[resource]
+script = ExtResource("1_jbuu6")
+bpm_sections = Array[ExtResource("1_w2u4b")]([SubResource("Resource_2r41h"), SubResource("Resource_w2u4b")])
+metadata/_custom_type_script = "uid://bxwm6geyls5vf"
