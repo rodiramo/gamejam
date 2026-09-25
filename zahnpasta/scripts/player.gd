@@ -1,6 +1,20 @@
 extends StaticBody2D
 
 const STEP_SIZE = 100
+const MAX_STEPS = 5
+const MIN_STEPS = 0
+
+@onready var audio_player = $AudioStreamPlayer2D
+
+var note_audios = [
+	preload("res://assets/sounds/notes/Flute_C4.wav"),
+	preload("res://assets/sounds/notes/Flute_D4.wav"),
+	preload("res://assets/sounds/notes/Flute_Eb4.wav"),
+	preload("res://assets/sounds/notes/Flute_F4.wav"),
+	preload("res://assets/sounds/notes/Flute_G4.wav")
+	]
+
+var current_pitch: int = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +24,22 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
-		position.y -= STEP_SIZE
+		step(1)
+		
 	if Input.is_action_just_pressed("down"):
-		position.y += STEP_SIZE
+		step(-1)
+
+func step(value: int):
+	var new_pos = current_pitch + value
+	if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
+		return
+	
+	position.y -= STEP_SIZE * value
+	current_pitch += value
+	play_note(current_pitch)
+		
+
+func play_note(pitch: int) -> void:
+	print(pitch)
+	audio_player.stream = note_audios[current_pitch]
+	audio_player.play()
