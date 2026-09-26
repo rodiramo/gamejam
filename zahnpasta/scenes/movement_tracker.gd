@@ -5,12 +5,12 @@ var history: Array[Snapshot] = []
 var start_height: int = 10
 
 @export var rythem_manager: RythmManager
-@export var replay_button: Button
 @export var player: Player
+@export var game_end_overlay: GameEndedOverlay
 
 func _ready() -> void:
-	replay_button.pressed.connect(switch_to_replay)
-
+	game_end_overlay.replay_pressed.connect(switch_to_replay)
+	
 
 func track_move(type: Snapshot.MoveType):
 	var beat = rythem_manager.get_current_beat()
@@ -43,5 +43,6 @@ func track_down(dash: bool):
 
 
 func switch_to_replay():
+	get_tree().paused = false
 	ReplaySettings.replay_mode(history)
 	get_tree().reload_current_scene()

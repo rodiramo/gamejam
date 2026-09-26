@@ -21,10 +21,10 @@
 script = ExtResource("1_w8frs")
 config = ExtResource("2_olg7q")
 
-[node name="MovementTracker" parent="." unique_id=391382865 node_paths=PackedStringArray("rythem_manager", "replay_button", "player") instance=ExtResource("3_8iemx")]
+[node name="MovementTracker" parent="." unique_id=391382865 node_paths=PackedStringArray("rythem_manager", "player", "game_end_overlay") instance=ExtResource("3_8iemx")]
 rythem_manager = NodePath("../RythmManager")
-replay_button = NodePath("../HUD/Button")
 player = NodePath("../Player")
+game_end_overlay = NodePath("../GameEndedOverlay")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 
@@ -59,13 +59,6 @@ position = Vector2(427, 240)
 rythm_manager = NodePath("../RythmManager")
 score_manager = NodePath("../ScoreManager")
 player = NodePath("../Player")
-
-[node name="Button" type="Button" parent="HUD" unique_id=356135269]
-offset_left = 23.0
-offset_top = 49.0
-offset_right = 31.0
-offset_bottom = 57.0
-text = "Replay"
 
 [node name="MusicPlayer" type="Node" parent="." unique_id=926297929]
 script = ExtResource("7_b121j")
