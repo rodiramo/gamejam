@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://btbvd2gfedrgl"]
 
 [ext_resource type="Script" uid="uid://bdp3qatk8ifok" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://d0iipl28d07er" path="res://assets/sprites/bg_main.png" id="2_0wfyh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_o5qli"]
-font_size = 64
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://b52ublfix6n4s" path="res://assets/buttons/background_start.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://boevl23soiowm" path="res://assets/goofy_ass_game_title.png" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://brpjno6ny4r12" path="res://assets/buttons/start_button.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dk247v5dwgh4x" path="res://assets/buttons/start_button_hovered.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1258310054]
 process_mode = 3
@@ -19,46 +20,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0wfyh")
+texture = ExtResource("2_tbgi4")
 
-[node name="GameTitle" type="Label" parent="MainMenu" unique_id=887220788]
+[node name="GameTitle" type="TextureRect" parent="MainMenu" unique_id=1886247617]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 56.0
-offset_right = 20.0
-offset_bottom = 79.0
+offset_left = -334.8423
+offset_top = 80.0
+offset_right = 334.8427
+offset_bottom = 230.0
 grow_horizontal = 2
-text = "Goofy Ass Game"
-label_settings = SubResource("LabelSettings_o5qli")
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("3_sugp2")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="StartButton" type="Button" parent="MainMenu" unique_id=605602281]
+[node name="StartButton" type="TextureButton" parent="MainMenu" unique_id=2022001512]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -64.0
-offset_right = 128.0
-offset_bottom = 18.0
+offset_left = -161.5
+offset_top = -38.0
+offset_right = 161.5
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start"
+texture_normal = ExtResource("4_tbgi4")
+texture_hover = ExtResource("5_tefeu")
+stretch_mode = 5
 
-[node name="QuitButton" type="Button" parent="MainMenu" unique_id=2004277638]
+[node name="QuitButton" type="TextureButton" parent="MainMenu" unique_id=2056829702]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 39.0
-offset_right = 128.0
-offset_bottom = 121.0
+offset_left = -105.5
+offset_top = 56.5
+offset_right = 105.5
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_tefeu")
+texture_hover = ExtResource("7_o6xl0")
+
+[node name="Label" type="Label" parent="MainMenu/QuitButton" unique_id=1760363075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = 2.0
+offset_right = 34.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
