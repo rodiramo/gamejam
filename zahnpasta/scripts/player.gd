@@ -23,19 +23,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("up"):
 		step(1)
-		
+
 	if Input.is_action_just_pressed("down"):
 		step(-1)
 
 func step(value: int):
-	var new_pos = current_pitch + value
-	if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
-		return
+	var double_step = 2 if Input.is_action_pressed("double_step") else 1
 	
-	position.y -= STEP_SIZE * value
-	current_pitch += value
+	var new_pos = current_pitch + (value * double_step)
+	if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
+		double_step = 1
+		new_pos = current_pitch + value
+		if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
+			return
+	
+	position.y -= STEP_SIZE * value * double_step
+	current_pitch += value * double_step
 	play_note(current_pitch)
 		
 
