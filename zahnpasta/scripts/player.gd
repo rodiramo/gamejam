@@ -1,8 +1,12 @@
+class_name Player
 extends StaticBody2D
+
+signal health_updated(health: int, max_health: int)
 
 const STEP_SIZE = 100
 const MAX_STEPS = 5
 const MIN_STEPS = 0
+const MAX_HEALTH = 5
 
 @onready var audio_player = $AudioStreamPlayer2D
 
@@ -15,6 +19,7 @@ var note_audios = [
 	]
 
 var current_pitch: int = 2
+var current_health: int = MAX_HEALTH
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,3 +54,8 @@ func play_note(pitch: int) -> void:
 	print(pitch)
 	audio_player.stream = note_audios[current_pitch]
 	audio_player.play()
+
+
+func take_damage() -> void:
+	current_health -= 1
+	health_updated.emit(current_health, MAX_HEALTH)
