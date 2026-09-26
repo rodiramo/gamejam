@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WavePattern" format=3 uid="uid://duejhus738qkr"]
 
-[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_pattern.gd" id="1_jraa8"]
+[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="1_jraa8"]
 [ext_resource type="Script" uid="uid://dhph65equ00la" path="res://data/spawns.gd" id="2_ynn7b"]
 
 [sub_resource type="Resource" id="Resource_86uhs"]
