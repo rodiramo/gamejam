@@ -6,7 +6,6 @@ extends Node
 @export var bullet_scene: PackedScene
 
 var _level_config: LevelConfig
-var _bullets: Array[Bullet] = []
 var _current_wave = 0
 var _current_beat_in_wave = 0
 
@@ -20,7 +19,6 @@ func spawn_bullet(lane: int) -> void:
 	var bullet: Bullet = bullet_scene.instantiate()
 	self.add_child(bullet)
 	bullet.move_to_spawn(lane, grid)
-	_bullets.append(bullet)
 
 func _spawn_new_bullets() -> void:
 	var wave_segment = _get_current_beat_in_wave()
@@ -32,16 +30,9 @@ func _spawn_new_bullets() -> void:
 			spawn_bullet(i)
 
 func _move_bullets() -> void:
-	var to_delete: Array[int] = []
-	
-	for i in _bullets.size():
-		if !_bullets[i].move(grid):
-			to_delete.append(i)
-	
-	to_delete.reverse()
-	for i in to_delete:
-		_bullets[i].queue_free()
-		_bullets.pop_at(i)
+	for bullet in get_tree().get_nodes_in_group("bullets"):
+		if !bullet.move(grid):
+			bullet.queue_free()
 
 func _get_current_beat_in_wave() -> Spawns:
 	if _current_wave > _level_config.waves.size() - 1:
