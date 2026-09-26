@@ -20,7 +20,8 @@ script = ExtResource("1_w8frs")
 [node name="ScoreManager" parent="." unique_id=559904390 node_paths=PackedStringArray("rythm_manager") instance=ExtResource("4_8c41q")]
 rythm_manager = NodePath("../RythmManager")
 
-[node name="Player" parent="." unique_id=517324794 instance=ExtResource("1_2q6dc")]
+[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid") instance=ExtResource("1_2q6dc")]
+grid = NodePath("../Grid")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 width = 48
@@ -28,6 +29,7 @@ height = 48
 cells_x = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
+position = Vector2(576, 324)
 
 [node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager", "player") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
