@@ -5,7 +5,8 @@ signal switch_audio(a: int, b: int)
 enum State{
 	RUNNING,
 	PAUSED,
-	GAME_OVER
+	GAME_OVER,
+	GAME_WON
 }
 
 @export var config: LevelConfig
@@ -37,10 +38,19 @@ func _switch_audio() -> void:
 	switch_audio.emit(intensity, max_intensity)
 
 
+func end_game(state: State) -> void:
+	self.rythm_manager.stop()
+	_state = state
+	# TODO: show end screen, allow highscore saving
+
+
+func _on_rythm_manager_level_ended() -> void:
+	end_game(State.GAME_WON)
+
+
 func _on_player_health_updated(health: int, _max_health: int) -> void:
 	if health <= 0:
-		self.rythm_manager.stop()
-		_state = State.GAME_OVER
+		end_game(State.GAME_OVER)
 
 
 func _on_player_moved() -> void:
