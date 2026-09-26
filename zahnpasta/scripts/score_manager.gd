@@ -2,9 +2,10 @@ class_name ScoreManager
 extends Node
 
 signal score_updated(score: int)
+signal multiplier_updated(multiplier: float)
 
 
-@export var base_score_per_beat: int = 10
+@export var base_score_per_beat: int = 100
 @export var base_score_multiplier: float = 1.0
 @export var extra_score_multiplier_per_intensity_level: float = 0.1
 @export var extra_score_multiplier_per_combo_level: float = 0.01
@@ -34,6 +35,7 @@ func update_combo(combo: int) -> void:
 
 func _update_multiplier() -> void:
 	_multiplier = base_score_multiplier + _intensity_multiplier + _combo_multiplier
+	multiplier_updated.emit(_multiplier)
 
 
 func _on_rythm_manager_beat_hit(_beat: int) -> void:

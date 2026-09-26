@@ -6,6 +6,13 @@ signal level_ended
 
 const ONE_MINUTE = 60.0
 
+
+@export var beat_timing_grace_window_percent: float = 0.1
+
+
+@onready var timer = $Timer
+
+
 var _current_beat_interval_sec: float = 1.0
 var _current_beat: int = 0
 var _current_bpm_section: int = 0
@@ -22,11 +29,25 @@ func initialize(level_config: LevelConfig) -> void:
 
 
 func start() -> void:
-	$Timer.start(_current_beat_interval_sec)
+	timer.start(_current_beat_interval_sec)
 
 
 func stop() -> void:
-	$Timer.stop()
+	timer.stop()
+
+
+func is_on_beat() -> bool:
+	var times_to_check := [timer.wait_time, timer.wait_time/2, 0.0]
+	var time_left: float = timer.time_left
+	var grace_window: float = timer.wait_time * beat_timing_grace_window_percent
+	
+	for time in times_to_check:
+		var lower_bound: float = time - grace_window
+		var upper_bound: float = time + grace_window
+		if time_left >= lower_bound and time_left <= upper_bound:
+			return true
+	
+	return false
 
 
 func process_beat() -> void:
