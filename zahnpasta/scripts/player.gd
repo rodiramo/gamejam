@@ -53,6 +53,8 @@ func _move_on_grid() -> void:
 
 
 func play_note(pitch: int) -> void:
+	for stream in audio_players:
+		stream.stop()
 	audio_players[current_pitch].play()
 
 

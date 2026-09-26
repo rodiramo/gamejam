@@ -191,7 +191,7 @@ size = Vector2(48, 45)
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1611927915]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.98, 0.98)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"
 

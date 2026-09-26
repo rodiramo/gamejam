@@ -5,7 +5,7 @@ extends Node
 
 var current_Stream0 := true
 var intensity_data = [
-	preload("res://assets/musik/test.mp3"), 
+	preload("res://assets/musik/TestBeat.mp3"), 
 	preload("res://assets/musik/test2.mp3"), 
 	preload("res://assets/musik/test.mp3"), 
 	preload("res://assets/musik/test2.mp3")

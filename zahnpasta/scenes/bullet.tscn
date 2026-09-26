@@ -400,34 +400,134 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_tamys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_26lx3"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.5),
+"transitions": PackedFloat32Array(1.866066, 0.2679432, 0.2679432),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.031873275, 0.06374655),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1cfmv"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(100, -50), Vector2(30, -60), Vector2(4.57, -30), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.53, 1.53), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cfmv"]
+_data = {
+&"RESET": SubResource("Animation_tamys"),
+&"jump": SubResource("Animation_26lx3"),
+&"spawn": SubResource("Animation_1cfmv")
+}
+
 [node name="Bullet" type="Area2D" unique_id=2063111404 groups=["bullets"]]
 script = ExtResource("1_y25gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636910796]
 shape = SubResource("RectangleShape2D_h08rg")
 
-[node name="Sprite1" type="AnimatedSprite2D" parent="." unique_id=1559235955 groups=["bullet_sprites"]]
-visible = false
+[node name="Sprites" type="Node2D" parent="." unique_id=290343263]
+
+[node name="Sprite1" type="AnimatedSprite2D" parent="Sprites" unique_id=1559235955 groups=["bullet_sprites"]]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"
 
-[node name="Sprite2" type="AnimatedSprite2D" parent="." unique_id=858477318 groups=["bullet_sprites"]]
+[node name="Sprite2" type="AnimatedSprite2D" parent="Sprites" unique_id=858477318 groups=["bullet_sprites"]]
 visible = false
-position = Vector2(0, -19)
+position = Vector2(0, -38)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_y25gk")
 autoplay = "default"
 
-[node name="Sprite3" type="AnimatedSprite2D" parent="." unique_id=1527173768 groups=["bullet_sprites"]]
+[node name="Sprite3" type="AnimatedSprite2D" parent="Sprites" unique_id=1527173768 groups=["bullet_sprites"]]
 visible = false
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_l5glv")
 autoplay = "default"
 
-[node name="Sprite4" type="AnimatedSprite2D" parent="." unique_id=985743462 groups=["bullet_sprites"]]
+[node name="Sprite4" type="AnimatedSprite2D" parent="Sprites" unique_id=985743462 groups=["bullet_sprites"]]
 visible = false
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_eoqba")
 autoplay = "default"
 
-[node name="Sprite5" type="AnimatedSprite2D" parent="." unique_id=961283784 groups=["bullet_sprites"]]
+[node name="Sprite5" type="AnimatedSprite2D" parent="Sprites" unique_id=961283784 groups=["bullet_sprites"]]
 visible = false
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_sey4q")
 autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1189161477]
+libraries/ = SubResource("AnimationLibrary_1cfmv")
+autoplay = &"spawn"

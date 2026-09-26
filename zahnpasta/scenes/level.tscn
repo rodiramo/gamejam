@@ -63,6 +63,7 @@ player = NodePath("../Player")
 script = ExtResource("7_b121j")
 
 [node name="Stream0" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=349253826]
+autoplay = true
 script = ExtResource("8_8c41q")
 
 [node name="Stream1" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2041139611]

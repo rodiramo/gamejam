@@ -10,7 +10,7 @@ var _sprites: Array[AnimatedSprite2D] = []
 
 
 func active_sprite(index: int) -> void:
-	for child in get_children():
+	for child in $Sprites.get_children():
 		if child.is_in_group("bullet_sprites"):
 			_sprites.append(child)
 	
@@ -25,6 +25,8 @@ func move_to(grid_pos: Vector2, grid: Grid) -> bool:
 	return grid.move_to_grid(grid_pos, self)
 	
 func move(grid: Grid) -> bool:
+	if ($AnimationPlayer.current_animation != "spawn"):
+		$AnimationPlayer.play("jump")
 	return move_to(_pos + movement, grid)
 	
 func move_to_spawn(lane: int, grid: Grid) -> void:
