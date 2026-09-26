@@ -12,14 +12,12 @@ const MAX_HEALTH = 3
 @export var grid: Grid
 @export var score_manager: ScoreManager
 
-@onready var audio_player = $AudioStreamPlayer2D
-
-var note_audios = [
-	preload("res://assets/sounds/notes/Flute05.wav"),
-	preload("res://assets/sounds/notes/Flute04.wav"),
-	preload("res://assets/sounds/notes/Flute03.wav"),
-	preload("res://assets/sounds/notes/Flute02.wav"),
-	preload("res://assets/sounds/notes/Flute01.wav")
+@onready var audio_players = [
+	$AudioPitchLane0,
+	$AudioPitchLane1,
+	$AudioPitchLane2,
+	$AudioPitchLane3,
+	$AudioPitchLane4
 ]
 
 var current_pitch: int = 2
@@ -55,9 +53,7 @@ func _move_on_grid() -> void:
 
 
 func play_note(pitch: int) -> void:
-	print(pitch)
-	audio_player.stream = note_audios[current_pitch]
-	audio_player.play()
+	audio_players[current_pitch].play()
 
 
 func take_damage() -> void:
