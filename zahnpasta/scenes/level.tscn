@@ -79,6 +79,7 @@ visible = false
 [node name="CountInTimer" type="Timer" parent="." unique_id=412634349]
 autostart = true
 
+[connection signal="player_move" from="." to="Player" method="_on_level_player_move"]
 [connection signal="switch_audio" from="." to="MusicPlayer" method="_on_level_switch_audio"]
 [connection signal="level_ended" from="RythmManager" to="." method="_on_rythm_manager_level_ended"]
 [connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]
