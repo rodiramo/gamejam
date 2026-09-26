@@ -35,6 +35,7 @@ func _on_timer_timeout():
 	history.pop_at(0)
 	
 	grid.move_to_grid(snapshot.to_position, player)
+	player.play_note(snapshot.to_position.y)
 
 
 func track_move_to(pos: Vector2):
