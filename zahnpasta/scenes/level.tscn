@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://i7j7hp537bqs" path="res://scripts/level.gd" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bes7wh2aww4hl" path="res://scenes/rythm_manager.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://cm3t750843tvn" path="res://scenes/score_manager.tscn" id="4_8c41q"]
 [ext_resource type="PackedScene" uid="uid://cga4qxjihgg3f" path="res://scenes/grid.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://cp85rll4tblkg" path="res://scenes/hud.tscn" id="6_2r41h"]
 [ext_resource type="Script" uid="uid://dvb8wu7tqcrey" path="res://scripts/musik_player.gd" id="7_b121j"]
@@ -16,6 +17,9 @@ script = ExtResource("1_w8frs")
 
 [node name="BulletManager" parent="." unique_id=2103513074 instance=ExtResource("3_mx8sn")]
 
+[node name="ScoreManager" parent="." unique_id=559904390 node_paths=PackedStringArray("rythm_manager") instance=ExtResource("4_8c41q")]
+rythm_manager = NodePath("../RythmManager")
+
 [node name="Player" parent="." unique_id=517324794 instance=ExtResource("1_2q6dc")]
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
@@ -25,8 +29,9 @@ cells_x = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
 
-[node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager") instance=ExtResource("6_2r41h")]
+[node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
+score_manager = NodePath("../ScoreManager")
 
 [node name="MusicPlayer" type="Node" parent="." unique_id=926297929]
 script = ExtResource("7_b121j")

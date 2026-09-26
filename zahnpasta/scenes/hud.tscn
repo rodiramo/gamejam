@@ -14,6 +14,16 @@ offset_bottom = 23.0
 grow_horizontal = 0
 text = "Beat: 0"
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=1541245567]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 24.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Score: 0"
+
 [node name="PressHintDebugLabel" type="Label" parent="." unique_id=1587051712]
 anchors_preset = 7
 anchor_left = 0.5
