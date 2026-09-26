@@ -1,6 +1,7 @@
 extends Node2D
 
 signal switch_audio(a: int, b: int)
+signal player_move(allowed: bool)
 
 enum State{
 	COUNT_IN,
@@ -49,6 +50,7 @@ func resume_game() -> void:
 	_state = State.RUNNING
 	get_tree().paused = false
 	pause_overlay.hide()
+	player_move.emit(true)
 
 
 func pause_game() -> void:
@@ -56,6 +58,7 @@ func pause_game() -> void:
 	_state = State.PAUSED
 	get_tree().paused = true
 	pause_overlay.show()
+	player_move.emit(false)
 
 
 func _switch_audio() -> void:

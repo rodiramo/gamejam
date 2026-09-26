@@ -23,6 +23,8 @@ const MAX_HEALTH = 3
 var current_pitch: int = 2
 var current_health: int = MAX_HEALTH
 
+var allowed_to_move: bool = false
+
 
 func _ready() -> void:
 	_move_on_grid()
@@ -34,8 +36,10 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("down"):
 		step(-1)
 
-
 func step(value: int):
+	if !allowed_to_move:
+		return
+		
 	var double_step = 2 if Input.is_action_pressed("double_step") else 1
 	
 	var new_pitch = clampi(current_pitch - (value * double_step), MIN_STEPS, MAX_STEPS)
@@ -66,3 +70,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullets"):
 		take_damage()
 		area.queue_free()
+
+
+func _on_level_player_move(allowed: bool) -> void:
+	allowed_to_move = allowed
