@@ -11,11 +11,13 @@ enum State{
 @export var config: LevelConfig
 
 @onready var rythm_manager: RythmManager = $RythmManager
+@onready var bullet_manager: BulletManager = $BulletManager
 
 var _state: State = State.PAUSED
 
 func _ready() -> void:
 	self.rythm_manager.initialize(config)
+	self.bullet_manager.initialize(config)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("resume") and _state == State.PAUSED:

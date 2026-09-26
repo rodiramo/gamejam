@@ -1,9 +1,9 @@
 class_name Grid
 extends Node2D
 
-@export var width = 48
-@export var height = 48
-@export var cells_x = 10
+@export var width = 96
+@export var height = 96
+@export var cells_x = 13
 @export var cells_y = 5
 
 @export var grid_zero_marker: Marker2D
@@ -23,3 +23,7 @@ func move_to_grid(grid_pos: Vector2, node: Node2D) -> bool:
 		return true
 	else:
 		return false
+
+## get a grid position for spawning outside if view
+func get_spawn_position(lane: int):
+	return Vector2(cells_x - 1, lane)
