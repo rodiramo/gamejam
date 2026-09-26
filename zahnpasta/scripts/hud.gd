@@ -17,6 +17,7 @@ func _ready() -> void:
 	score_manager.score_updated.connect(self._on_score_manager_score_updated)
 	score_manager.multiplier_updated.connect(self._on_score_manager_multiplier_updated)
 	player.health_updated.connect(self._on_player_health_updated)
+	_on_score_manager_multiplier_updated(1)
 	
 	for child in $HealthSegments.get_children():
 		health_segments.append(child)
@@ -31,9 +32,10 @@ func _on_score_manager_score_updated(score: int) -> void:
 
 
 func _on_score_manager_multiplier_updated(multiplier: float) -> void:
-	$MultiplierLabel.text = "x%d" % multiplier
-	$MultiplierLabel.label_settings.font_size = clampi(multiplier_label_base_font_size + multiplier_label_base_font_size * multiplier * 0.1, multiplier_label_base_font_size, multiplier_label_base_font_size * 2)
-
+	$Multiplier/MultiplierLabel.text = "x%d" % multiplier
+	$Multiplier/MultiplierLabel.label_settings.font_size = clampi(multiplier_label_base_font_size + multiplier_label_base_font_size * multiplier * 0.1, multiplier_label_base_font_size, multiplier_label_base_font_size * 2)
+	$Multiplier.rotation_degrees = randf_range(-30, -10)
+	$Multiplier/AnimationPlayer.play("bounce1")
 
 func _on_player_health_updated(health: int, max_health: int) -> void:
 	for i in range(max_health):
