@@ -11,6 +11,7 @@ const MAX_HEALTH = 3
 
 @export var grid: Grid
 @export var score_manager: ScoreManager
+@export var rythm_manager: RythmManager
 
 @onready var audio_players = [
 	$AudioPitchLane0,
@@ -28,6 +29,7 @@ var allowed_to_move: bool = false
 
 func _ready() -> void:
 	_move_on_grid()
+	rythm_manager.beat_hit.connect(_rythm_manager_beat_hit)
 
 
 func _process(_delta: float) -> void:
@@ -76,3 +78,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_level_player_move(allowed: bool) -> void:
 	allowed_to_move = allowed
+
+func _rythm_manager_beat_hit(beat: int) -> void:
+	print("ijijijo")
+	$AnimationPlayer.play("jump")

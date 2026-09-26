@@ -7,6 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://cdbtc33qjhgmj" path="res://assets/sounds/notes/Flute03.wav" id="5_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://cxorbrfp0acpt" path="res://assets/sounds/notes/Flute02.wav" id="6_y4r1p"]
 [ext_resource type="AudioStream" uid="uid://gg4nmps78v6h" path="res://assets/sounds/notes/Flute01.wav" id="7_d2wvv"]
+[ext_resource type="Animation" uid="uid://fy0j2jmw6lwv" path="res://animations/jump.res" id="8_smehm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(48, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -184,16 +188,29 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(48, 45)
+[sub_resource type="Animation" id="Animation_ur7pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
+_data = {
+&"RESET": SubResource("Animation_ur7pv"),
+&"jump": ExtResource("8_smehm")
+}
 
 [node name="Player" type="Area2D" unique_id=407505711]
 script = ExtResource("1_g2els")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1611927915]
-scale = Vector2(0.98, 0.98)
-sprite_frames = SubResource("SpriteFrames_647dn")
-autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=404891784]
 shape = SubResource("RectangleShape2D_g2els")
@@ -212,5 +229,16 @@ stream = ExtResource("6_y4r1p")
 
 [node name="AudioPitchLane4" type="AudioStreamPlayer2D" parent="." unique_id=1153321301]
 stream = ExtResource("7_d2wvv")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=2011445616]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Sprites" unique_id=1611927915]
+position = Vector2(0, -6.19)
+scale = Vector2(1.16, 1.16)
+sprite_frames = SubResource("SpriteFrames_647dn")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1048662540]
+libraries/ = SubResource("AnimationLibrary_y4r1p")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

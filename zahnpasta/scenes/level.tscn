@@ -41,9 +41,10 @@ texture = ExtResource("8_arp2o")
 centered = false
 offset = Vector2(8, 58)
 
-[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid", "score_manager") instance=ExtResource("1_2q6dc")]
+[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid", "score_manager", "rythm_manager") instance=ExtResource("1_2q6dc")]
 grid = NodePath("../Grid")
 score_manager = NodePath("../ScoreManager")
+rythm_manager = NodePath("../RythmManager")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 position = Vector2(24, 105)

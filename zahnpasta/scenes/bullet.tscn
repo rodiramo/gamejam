@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5h6gni6n581w" path="res://assets/sprites/BasicNote12fps.png" id="4_eoqba"]
 [ext_resource type="Texture2D" uid="uid://bvgmjducbjpt1" path="res://assets/sprites/PurpleEnemy12fps.png" id="5_qncy5"]
 [ext_resource type="Texture2D" uid="uid://c1n5mtw4dv57g" path="res://assets/sprites/ToiletPaperAnimatedEyes12fps.png" id="6_tamys"]
+[ext_resource type="Animation" uid="uid://fy0j2jmw6lwv" path="res://animations/jump.res" id="7_26lx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h08rg"]
 size = Vector2(48, 48)
@@ -427,34 +428,6 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_26lx3"]
-resource_name = "jump"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333333, 0.5),
-"transitions": PackedFloat32Array(1.866066, 0.2679432, 0.2679432),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.031873275, 0.06374655),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_1cfmv"]
 resource_name = "spawn"
 length = 0.4
@@ -486,7 +459,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cfmv"]
 _data = {
 &"RESET": SubResource("Animation_tamys"),
-&"jump": SubResource("Animation_26lx3"),
+&"jump": ExtResource("7_26lx3"),
 &"spawn": SubResource("Animation_1cfmv")
 }
 
