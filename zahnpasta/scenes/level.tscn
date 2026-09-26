@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://blkydxc26by1p" path="res://data/level_1.tres" id="2_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bes7wh2aww4hl" path="res://scenes/rythm_manager.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://dt8f6jsil5x4u" path="res://scenes/movement_tracker.tscn" id="3_ux5qa"]
 [ext_resource type="PackedScene" uid="uid://cm3t750843tvn" path="res://scenes/score_manager.tscn" id="4_8c41q"]
 [ext_resource type="PackedScene" uid="uid://c5egssp203spm" path="res://scenes/bullet.tscn" id="4_klq6b"]
 [ext_resource type="PackedScene" uid="uid://cga4qxjihgg3f" path="res://scenes/grid.tscn" id="5_ppgk2"]
@@ -20,6 +21,9 @@
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
 config = ExtResource("2_olg7q")
+
+[node name="MovementTracker" parent="." unique_id=486611869 node_paths=PackedStringArray("rythem_manager") instance=ExtResource("3_ux5qa")]
+rythem_manager = NodePath("../RythmManager")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 

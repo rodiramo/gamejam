@@ -12,6 +12,7 @@ const MAX_HEALTH = 3
 @export var grid: Grid
 @export var score_manager: ScoreManager
 @export var rythm_manager: RythmManager
+@export var movement_tracker: MovementTracker
 
 @onready var audio_players = [
 	$AudioPitchLane0,
@@ -48,6 +49,7 @@ func step(value: int):
 	if new_pitch == current_pitch:
 		return
 	
+	movement_tracker.track_move_to(Vector2(0, new_pitch))
 	current_pitch = new_pitch
 	_move_on_grid()
 	moved.emit()
