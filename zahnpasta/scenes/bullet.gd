@@ -1,9 +1,21 @@
 class_name Bullet
 extends Area2D
 
+const NUM_DIFFERENT_SPRITES = 5
+
 @export var movement = Vector2(-1, 0)
 
 var _pos: Vector2
+var _sprites: Array[AnimatedSprite2D] = []
+
+
+func active_sprite(index: int) -> void:
+	for child in get_children():
+		if child.is_in_group("bullet_sprites"):
+			_sprites.append(child)
+	
+	_sprites[index].show()
+
 
 func get_pos() -> Vector2:
 	return _pos

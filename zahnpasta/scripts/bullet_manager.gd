@@ -8,15 +8,18 @@ extends Node
 var _level_config: LevelConfig
 var _current_wave = 0
 var _current_beat_in_wave = 0
+var _current_bullet_sprite_index: int
 
 func _ready() -> void:
 	_rythem_manager.beat_hit.connect(on_beat)
+	_current_bullet_sprite_index = randi_range(0, Bullet.NUM_DIFFERENT_SPRITES - 1)
 
 func initialize(level_config: LevelConfig) -> void:
 	_level_config = level_config
 
 func spawn_bullet(lane: int) -> void:
 	var bullet: Bullet = bullet_scene.instantiate()
+	bullet.active_sprite(_current_bullet_sprite_index)
 	self.add_child(bullet)
 	bullet.move_to_spawn(lane, grid)
 
@@ -37,6 +40,9 @@ func _move_bullets() -> void:
 func _get_current_beat_in_wave() -> Spawns:
 	if _current_wave > _level_config.waves.size() - 1:
 		return null
+	
+	if _current_beat_in_wave == 0:
+		_current_bullet_sprite_index = randi_range(0, Bullet.NUM_DIFFERENT_SPRITES - 1)
 	
 	var wave = _level_config.waves[_current_wave]
 	var current_beat = wave.spawns_per_beat[_current_beat_in_wave]
