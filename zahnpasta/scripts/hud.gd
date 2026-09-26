@@ -1,3 +1,4 @@
+class_name HUD
 extends CanvasLayer
 
 @export var rythm_manager: RythmManager

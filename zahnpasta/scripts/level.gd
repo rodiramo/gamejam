@@ -1,4 +1,3 @@
-class_name HUD
 extends Node2D
 
 signal switch_audio(a: int, b: int)
