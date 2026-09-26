@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfidqqpdnfvxb" path="res://scenes/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://i7j7hp537bqs" path="res://scripts/level.gd" id="1_w8frs"]
+[ext_resource type="Resource" uid="uid://blkydxc26by1p" path="res://data/level_1.tres" id="2_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bes7wh2aww4hl" path="res://scenes/rythm_manager.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cm3t750843tvn" path="res://scenes/score_manager.tscn" id="4_8c41q"]
@@ -12,6 +13,7 @@
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
+config = ExtResource("2_olg7q")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 
