@@ -4,3 +4,6 @@
 
 [node name="MovementTracker" type="Node" unique_id=391382865]
 script = ExtResource("1_3cibo")
+
+[node name="Timer" type="Timer" parent="." unique_id=63713450]
+one_shot = true

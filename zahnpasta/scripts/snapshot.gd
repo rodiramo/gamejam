@@ -3,7 +3,9 @@ extends Resource
 
 enum MoveType {
 	UP,
-	DOWN
+	DASH_UP,
+	DOWN,
+	DASH_DOWN
 }
 
 var move_type: MoveType

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://besqw0psfoanc"]
+
+[ext_resource type="Script" uid="uid://bl43mhlwiamy6" path="res://scenes/player_controller.gd" id="1_d4y06"]
+
+[node name="PlayerController" type="Node" unique_id=1075056727]
+script = ExtResource("1_d4y06")
+
+[node name="Timer" type="Timer" parent="." unique_id=1529301275]

@@ -21,7 +21,7 @@ var note_audios = [
 	preload("res://assets/sounds/notes/Flute_Eb4.wav"),
 	preload("res://assets/sounds/notes/Flute_F4.wav"),
 	preload("res://assets/sounds/notes/Flute_G4.wav")
-	]
+]
 
 var current_pitch: int = 2
 var current_health: int = MAX_HEALTH
@@ -31,22 +31,12 @@ func _ready() -> void:
 	_move_on_grid()
 
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("up"):
-		step(1)
-		movement_tracker.track_up()
-	elif Input.is_action_just_pressed("down"):
-		step(-1)
-		movement_tracker.track_down()
-
-
-func step(value: int):
-	var double_step = 2 if Input.is_action_pressed("double_step") else 1
-	
-	var new_pitch = clampi(current_pitch - (value * double_step), MIN_STEPS, MAX_STEPS)
+func move(value: int, dash: bool):
+	print("I like to move it move it!")
+	var new_pitch = clampi(current_pitch - (value * (2 if dash else 1)), MIN_STEPS, MAX_STEPS)
 	if new_pitch == current_pitch:
 		return
-	
+	print("Pitch: ", new_pitch)
 	current_pitch = new_pitch
 	_move_on_grid()
 	moved.emit()
@@ -67,6 +57,10 @@ func take_damage() -> void:
 	current_health -= 1
 	health_updated.emit(current_health, MAX_HEALTH)
 	score_manager.update_combo(0)
+
+
+func get_pitch() -> int:
+	return current_pitch
 
 
 func _on_area_entered(area: Area2D) -> void:
