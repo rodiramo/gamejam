@@ -2,6 +2,7 @@ class_name Player
 extends StaticBody2D
 
 signal health_updated(health: int, max_health: int)
+signal moved
 
 const STEP_SIZE = 100
 const MAX_STEPS = 4
@@ -43,6 +44,7 @@ func step(value: int):
 	
 	current_pitch = new_pitch
 	_move_on_grid()
+	moved.emit()
 	play_note(current_pitch)
 
 
