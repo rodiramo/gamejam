@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://khcy8acak5xq"]
 
 [ext_resource type="Script" uid="uid://c7sd15y7xqmn7" path="res://scripts/game_ended_overlay.gd" id="1_rdb2h"]
+[ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="2_k0o1u"]
+[ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="3_k81yy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_647dn"]
 font_size = 48
@@ -50,50 +52,98 @@ grow_vertical = 2
 text = "Score: 9000"
 label_settings = SubResource("LabelSettings_sey4q")
 
-[node name="RetryButton" type="Button" parent="Panel" unique_id=177025495]
+[node name="RetryButton" type="TextureButton" parent="Panel" unique_id=1925726663]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -9.0
-offset_right = 128.0
-offset_bottom = 55.0
+offset_left = -105.0
+offset_top = -29.0
+offset_right = 106.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_k0o1u")
+texture_hover = ExtResource("3_k81yy")
+
+[node name="Label" type="Label" parent="Panel/RetryButton" unique_id=1669118495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Retry"
 
-[node name="ReplayButton" type="Button" parent="Panel" unique_id=1347556531]
+[node name="ReplayButton" type="TextureButton" parent="Panel" unique_id=116411327]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 63.0
-offset_right = 128.0
-offset_bottom = 127.0
+offset_left = -105.0
+offset_top = 52.0
+offset_right = 106.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Show replay"
+texture_normal = ExtResource("2_k0o1u")
+texture_hover = ExtResource("3_k81yy")
 
-[node name="BackToMainMenuButton" type="Button" parent="Panel" unique_id=1982489201]
+[node name="Label" type="Label" parent="Panel/ReplayButton" unique_id=470902752]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 135.0
-offset_right = 128.0
-offset_bottom = 199.0
+offset_left = -52.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back to main menu"
+text = "Replay"
+
+[node name="BackToMainMenuButton" type="TextureButton" parent="Panel" unique_id=558674778]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = 135.0
+offset_right = 106.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_k0o1u")
+texture_hover = ExtResource("3_k81yy")
+
+[node name="Label" type="Label" parent="Panel/BackToMainMenuButton" unique_id=2062713525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
 
 [connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Panel/ReplayButton" to="." method="_on_replay_button_pressed"]

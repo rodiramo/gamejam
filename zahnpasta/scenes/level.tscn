@@ -84,6 +84,7 @@ autostart = true
 [connection signal="level_ended" from="RythmManager" to="." method="_on_rythm_manager_level_ended"]
 [connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]
 [connection signal="moved" from="Player" to="." method="_on_player_moved"]
+[connection signal="menu_button_pressed" from="HUD" to="." method="pause_game"]
 [connection signal="back_to_main_menu_pressed" from="PauseOverlay" to="." method="go_to_main_menu"]
 [connection signal="resume_pressed" from="PauseOverlay" to="." method="resume_game"]
 [connection signal="back_to_main_menu_pressed" from="GameEndedOverlay" to="." method="go_to_main_menu"]
