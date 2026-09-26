@@ -2,9 +2,5 @@
 
 [ext_resource type="Script" uid="uid://b60fbi5rv5t82" path="res://scripts/grid.gd" id="1_t5fjg"]
 
-[node name="Grid" type="Node2D" unique_id=628514153 node_paths=PackedStringArray("grid_zero_marker")]
+[node name="Grid" type="Node2D" unique_id=628514153]
 script = ExtResource("1_t5fjg")
-width = 96
-height = 96
-cells_x = 13
-grid_zero_marker = NodePath("")

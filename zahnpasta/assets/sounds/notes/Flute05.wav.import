@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bupvsmwuocgfk"
-path="res://.godot/imported/Flute_F4.wav-c9f788c82b10dc724e4f0d9bb775b67e.sample"
+uid="uid://ckgxi85y4impd"
+path="res://.godot/imported/Flute05.wav-76083ac2174d297bd19b4fdc079bc527.sample"
 
 [deps]
 
-source_file="res://assets/sounds/notes/Flute_F4.wav"
-dest_files=["res://.godot/imported/Flute_F4.wav-c9f788c82b10dc724e4f0d9bb775b67e.sample"]
+source_file="res://assets/sounds/notes/Flute05.wav"
+dest_files=["res://.godot/imported/Flute05.wav-76083ac2174d297bd19b4fdc079bc527.sample"]
 
 [params]
 

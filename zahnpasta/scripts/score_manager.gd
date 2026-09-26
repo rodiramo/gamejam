@@ -8,7 +8,7 @@ signal multiplier_updated(multiplier: float)
 @export var base_score_per_beat: int = 100
 @export var base_score_multiplier: float = 1.0
 @export var extra_score_multiplier_per_intensity_level: float = 0.1
-@export var extra_score_multiplier_per_combo_level: float = 0.01
+@export var extra_score_multiplier_per_combo_level: float = 1.0
 @export var rythm_manager: RythmManager
 
 

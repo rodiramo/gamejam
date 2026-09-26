@@ -7,20 +7,18 @@ signal moved
 const STEP_SIZE = 100
 const MAX_STEPS = 4
 const MIN_STEPS = 0
-const MAX_HEALTH = 5
+const MAX_HEALTH = 3
 
 @export var grid: Grid
 @export var score_manager: ScoreManager
 
-@onready var audio_player = $AudioStreamPlayer2D
-
-var note_audios = [
-	preload("res://assets/sounds/notes/Flute_C4.wav"),
-	preload("res://assets/sounds/notes/Flute_D4.wav"),
-	preload("res://assets/sounds/notes/Flute_Eb4.wav"),
-	preload("res://assets/sounds/notes/Flute_F4.wav"),
-	preload("res://assets/sounds/notes/Flute_G4.wav")
-	]
+@onready var audio_players = [
+	$AudioPitchLane0,
+	$AudioPitchLane1,
+	$AudioPitchLane2,
+	$AudioPitchLane3,
+	$AudioPitchLane4
+]
 
 var current_pitch: int = 2
 var current_health: int = MAX_HEALTH
@@ -55,9 +53,7 @@ func _move_on_grid() -> void:
 
 
 func play_note(pitch: int) -> void:
-	print(pitch)
-	audio_player.stream = note_audios[current_pitch]
-	audio_player.play()
+	audio_players[current_pitch].play()
 
 
 func take_damage() -> void:
