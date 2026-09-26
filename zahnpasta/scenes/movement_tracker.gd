@@ -26,3 +26,7 @@ func track_move_to(pos: Vector2):
 	snapshot.in_between_time = rythem_manager.get_time_since_beat()
 	
 	history.append(snapshot)
+
+
+func get_history():
+	return history

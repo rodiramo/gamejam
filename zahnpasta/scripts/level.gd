@@ -21,6 +21,7 @@ enum State{
 @onready var count_in_overlay: Node = $CountInOverlay
 @onready var pause_overlay: PauseOverlay = $PauseOverlay
 @onready var game_ended_overlay: GameEndedOverlay = $GameEndedOverlay
+@onready var movement_tracker: MovementTracker = $MovementTracker
 
 var _state: State = State.COUNT_IN
 var combo: int = 0
@@ -117,4 +118,6 @@ func _on_game_ended_overlay_retry_pressed() -> void:
 
 
 func _on_game_ended_overlay_replay_pressed() -> void:
-	pass
+	var history = movement_tracker.get_history()
+	ReplaySettings.set_history(history)
+	ReplaySettings.set_to_replay()
