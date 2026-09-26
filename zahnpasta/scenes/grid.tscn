@@ -7,7 +7,4 @@ script = ExtResource("1_t5fjg")
 width = 96
 height = 96
 cells_x = 13
-grid_zero_marker = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=290290872]
-position = Vector2(-529, -240)
+grid_zero_marker = NodePath("")

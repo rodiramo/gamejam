@@ -28,6 +28,7 @@ height = 48
 cells_x = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
+position = Vector2(576, 324)
 
 [node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager", "player") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
