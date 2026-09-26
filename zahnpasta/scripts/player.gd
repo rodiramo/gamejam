@@ -11,6 +11,7 @@ const MAX_HEALTH = 5
 
 @export var grid: Grid
 @export var score_manager: ScoreManager
+@export var movement_tracker: MovementTracker
 
 @onready var audio_player = $AudioStreamPlayer2D
 
@@ -33,8 +34,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		step(1)
+		movement_tracker.track_up()
 	elif Input.is_action_just_pressed("down"):
 		step(-1)
+		movement_tracker.track_down()
 
 
 func step(value: int):

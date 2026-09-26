@@ -10,7 +10,7 @@ const ONE_MINUTE = 60.0
 @export var beat_timing_grace_window_percent: float = 0.1
 
 
-@onready var timer = $Timer
+@onready var timer: Timer = $Timer
 
 
 var _current_beat_interval_sec: float = 1.0
@@ -84,3 +84,11 @@ func _set_beat_interval_from_current_bpm_section() -> void:
 
 func _on_timer_timeout() -> void:
 	self.process_beat()
+
+
+func get_current_beat() -> int:
+	return _current_beat
+
+
+func get_time_from_last_beat() -> float:
+	return timer.wait_time - timer.time_left

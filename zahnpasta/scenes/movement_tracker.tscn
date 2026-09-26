@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt8f6jsil5x4u"]
+
+[ext_resource type="Script" uid="uid://c87g6ymtrya1c" path="res://scenes/movement_tracker.gd" id="1_3cibo"]
+
+[node name="MovementTracker" type="Node" unique_id=391382865]
+script = ExtResource("1_3cibo")
