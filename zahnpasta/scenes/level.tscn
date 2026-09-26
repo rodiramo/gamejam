@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://besqw0psfoanc" path="res://scenes/player_controller.tscn" id="7_64w2a"]
 [ext_resource type="Script" uid="uid://dvb8wu7tqcrey" path="res://scripts/musik_player.gd" id="7_b121j"]
 [ext_resource type="Script" uid="uid://cj11mkjjmpa0c" path="res://scripts/stream.gd" id="8_8c41q"]
+[ext_resource type="PackedScene" uid="uid://cuc7ce0ofprwu" path="res://scenes/count_in_overlay.tscn" id="12_8iemx"]
+[ext_resource type="PackedScene" uid="uid://b3a5h0pl4afa5" path="res://scenes/pause_overlay.tscn" id="13_64w2a"]
+[ext_resource type="PackedScene" uid="uid://khcy8acak5xq" path="res://scenes/game_ended_overlay.tscn" id="14_fpun6"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
@@ -44,9 +47,13 @@ score_manager = NodePath("../ScoreManager")
 movement_tracker = NodePath("../MovementTracker")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
+position = Vector2(24, 105)
+width = 54
+height = 54
+cells_x = 15
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
-position = Vector2(576, 324)
+position = Vector2(427, 240)
 
 [node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager", "player") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
@@ -69,6 +76,24 @@ script = ExtResource("8_8c41q")
 [node name="Stream1" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2041139611]
 script = ExtResource("8_8c41q")
 
+[node name="CountInOverlay" parent="." unique_id=1693649273 instance=ExtResource("12_8iemx")]
+
+[node name="PauseOverlay" parent="." unique_id=2010347511 instance=ExtResource("13_64w2a")]
+visible = false
+
+[node name="GameEndedOverlay" parent="." unique_id=870657157 instance=ExtResource("14_fpun6")]
+visible = false
+
+[node name="CountInTimer" type="Timer" parent="." unique_id=412634349]
+autostart = true
+
 [connection signal="switch_audio" from="." to="MusicPlayer" method="_on_level_switch_audio"]
+[connection signal="level_ended" from="RythmManager" to="." method="_on_rythm_manager_level_ended"]
 [connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]
 [connection signal="moved" from="Player" to="." method="_on_player_moved"]
+[connection signal="back_to_main_menu_pressed" from="PauseOverlay" to="." method="go_to_main_menu"]
+[connection signal="resume_pressed" from="PauseOverlay" to="." method="resume_game"]
+[connection signal="back_to_main_menu_pressed" from="GameEndedOverlay" to="." method="go_to_main_menu"]
+[connection signal="replay_pressed" from="GameEndedOverlay" to="." method="_on_game_ended_overlay_replay_pressed"]
+[connection signal="retry_pressed" from="GameEndedOverlay" to="." method="_on_game_ended_overlay_retry_pressed"]
+[connection signal="timeout" from="CountInTimer" to="." method="_on_count_in_timer_timeout"]

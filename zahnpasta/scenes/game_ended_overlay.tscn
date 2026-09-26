@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://khcy8acak5xq"]
+
+[ext_resource type="Script" uid="uid://c7sd15y7xqmn7" path="res://scripts/game_ended_overlay.gd" id="1_rdb2h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_647dn"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_sey4q"]
+font_size = 36
+
+[node name="GameEndedOverlay" type="CanvasLayer" unique_id=870657157]
+process_mode = 2
+script = ExtResource("1_rdb2h")
+
+[node name="Panel" type="Panel" parent="." unique_id=1886467635]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=1104366439]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 80.0
+offset_right = 231.0
+offset_bottom = 147.0
+grow_horizontal = 2
+text = "You won/game over"
+label_settings = SubResource("LabelSettings_647dn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Panel" unique_id=60308183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -67.5
+offset_right = 20.0
+offset_bottom = -44.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 9000"
+label_settings = SubResource("LabelSettings_sey4q")
+
+[node name="RetryButton" type="Button" parent="Panel" unique_id=177025495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -9.0
+offset_right = 128.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retry"
+
+[node name="ReplayButton" type="Button" parent="Panel" unique_id=1347556531]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 63.0
+offset_right = 128.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Show replay"
+
+[node name="BackToMainMenuButton" type="Button" parent="Panel" unique_id=1982489201]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 135.0
+offset_right = 128.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to main menu"
+
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Panel/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]

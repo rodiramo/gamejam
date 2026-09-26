@@ -33,6 +33,10 @@ func update_combo(combo: int) -> void:
 	_update_multiplier()
 
 
+func current_score() -> int:
+	return _score
+
+
 func _update_multiplier() -> void:
 	_multiplier = base_score_multiplier + _intensity_multiplier + _combo_multiplier
 	multiplier_updated.emit(_multiplier)
