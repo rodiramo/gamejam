@@ -50,7 +50,7 @@ metadata/_custom_type_script = "uid://cu06of5pek0a3"
 [sub_resource type="Resource" id="Resource_qtay3"]
 script = ExtResource("1_w2u4b")
 bpm = 162.0
-beats = 71
+beats = 72
 metadata/_custom_type_script = "uid://cu06of5pek0a3"
 
 [resource]
