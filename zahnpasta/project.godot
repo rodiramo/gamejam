@@ -21,6 +21,10 @@ window/size/viewport_width=854
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom_font="uid://cxwfgwqu8rh43"
+
 [input]
 
 up={

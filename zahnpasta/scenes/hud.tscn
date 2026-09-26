@@ -2,21 +2,25 @@
 
 [ext_resource type="Script" uid="uid://ciy3gogsjkd7v" path="res://scripts/hud.gd" id="1_ahhtf"]
 [ext_resource type="PackedScene" uid="uid://mwyc6sedny4j" path="res://scenes/health_segment.tscn" id="2_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://dhatr3stjiihc" path="res://assets/buttons/menu_icon.png" id="3_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://f3rugswe6yas" path="res://assets/buttons/menu_icon_hover.png" id="4_uo2fv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
-font_size = 32
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font_size = 12
 font_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" unique_id=320943947]
 script = ExtResource("1_ahhtf")
 
 [node name="BeatLabel" type="Label" parent="." unique_id=1053810022]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -33,17 +37,21 @@ label_settings = SubResource("LabelSettings_0wfyh")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1541245567]
 offset_left = 16.0
-offset_top = 16.0
-offset_right = 77.0
-offset_bottom = 39.0
+offset_top = 40.0
+offset_right = 252.0
+offset_bottom = 63.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_oo0fn")
 
 [node name="MultiplierLabel" type="Label" parent="." unique_id=1155020955]
-offset_left = 272.0
-offset_top = 28.0
-offset_right = 374.0
-offset_bottom = 51.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_top = 32.0
+offset_right = 51.0
+offset_bottom = 55.0
+grow_horizontal = 2
 text = "x1"
 label_settings = SubResource("LabelSettings_5ysmq")
 horizontal_alignment = 1
@@ -67,3 +75,17 @@ layout_mode = 2
 
 [node name="HealthSegment3" parent="HealthSegments" unique_id=2017509026 instance=ExtResource("2_oo0fn")]
 layout_mode = 2
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=700163158]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -16.0
+grow_vertical = 0
+texture_normal = ExtResource("3_6fi6k")
+texture_hover = ExtResource("4_uo2fv")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -1,11 +1,13 @@
 class_name HUD
 extends CanvasLayer
 
+signal menu_button_pressed
+
 @export var rythm_manager: RythmManager
 @export var score_manager: ScoreManager
 @export var player: Player
 
-@export var multiplier_label_base_font_size: int = 16
+@export var multiplier_label_base_font_size: int = 12
 
 var health_segments: Array[HealthSegment] = []
 
@@ -39,3 +41,7 @@ func _on_player_health_updated(health: int, max_health: int) -> void:
 			health_segments[i].reset()
 		elif i == health:
 			health_segments[i].lose()
+
+
+func _on_menu_button_pressed() -> void:
+	menu_button_pressed.emit()

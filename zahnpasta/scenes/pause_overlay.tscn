@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b3a5h0pl4afa5"]
 
 [ext_resource type="Script" uid="uid://bjxekrxr8uu1b" path="res://scripts/pause_overlay.gd" id="1_23pkr"]
+[ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="2_3fhia"]
+[ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="3_fggc0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0mu0o"]
 font_size = 48
@@ -31,35 +33,67 @@ label_settings = SubResource("LabelSettings_0mu0o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Panel" unique_id=804704427]
+[node name="ResumeButton" type="TextureButton" parent="Panel" unique_id=1844258719]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -41.0
-offset_right = 128.0
-offset_bottom = 41.0
+offset_left = -104.0
+offset_top = -33.0
+offset_right = 107.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_3fhia")
+texture_hover = ExtResource("3_fggc0")
+
+[node name="Label" type="Label" parent="Panel/ResumeButton" unique_id=2019159852]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 2.0
+offset_right = 61.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Resume"
 
-[node name="BackToMainMenuButton" type="Button" parent="Panel" unique_id=42452125]
+[node name="BackToMainMenuButton" type="TextureButton" parent="Panel" unique_id=982873140]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
+offset_left = -104.0
 offset_top = 55.0
-offset_right = 128.0
-offset_bottom = 137.0
+offset_right = 107.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back to main menu"
+texture_normal = ExtResource("2_3fhia")
+texture_hover = ExtResource("3_fggc0")
+
+[node name="Label" type="Label" parent="Panel/BackToMainMenuButton" unique_id=2061500523]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
 
 [connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
