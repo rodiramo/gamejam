@@ -29,9 +29,10 @@ cells_x = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361454667]
 
-[node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager") instance=ExtResource("6_2r41h")]
+[node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager", "score_manager", "player") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
 score_manager = NodePath("../ScoreManager")
+player = NodePath("../Player")
 
 [node name="MusicPlayer" type="Node" parent="." unique_id=926297929]
 script = ExtResource("7_b121j")
