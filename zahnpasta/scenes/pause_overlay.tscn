@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b3a5h0pl4afa5"]
+
+[ext_resource type="Script" uid="uid://bjxekrxr8uu1b" path="res://scripts/pause_overlay.gd" id="1_23pkr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mu0o"]
+font_size = 48
+
+[node name="PauseOverlay" type="CanvasLayer" unique_id=2010347511]
+process_mode = 2
+script = ExtResource("1_23pkr")
+
+[node name="Panel" type="Panel" parent="." unique_id=402095804]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausedLabel" type="Label" parent="Panel" unique_id=1760313279]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_top = 96.0
+offset_right = 158.5
+offset_bottom = 163.0
+grow_horizontal = 2
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_0mu0o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Panel" unique_id=804704427]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -41.0
+offset_right = 128.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[node name="BackToMainMenuButton" type="Button" parent="Panel" unique_id=42452125]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 55.0
+offset_right = 128.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to main menu"
+
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
