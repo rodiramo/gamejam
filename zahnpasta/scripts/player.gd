@@ -7,7 +7,7 @@ signal moved
 const STEP_SIZE = 100
 const MAX_STEPS = 4
 const MIN_STEPS = 0
-const MAX_HEALTH = 5
+const MAX_HEALTH = 3
 
 @export var grid: Grid
 @export var score_manager: ScoreManager

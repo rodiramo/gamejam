@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://mwyc6sedny4j"]
+
+[ext_resource type="Texture2D" uid="uid://cnetlkguaq6gs" path="res://assets/sprites/LosingLifeAnimation6fps.png" id="1_7inxx"]
+[ext_resource type="Script" uid="uid://bwgqxg8ysub8i" path="res://scripts/health_segment.gd" id="1_lp54v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp54v"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh7jn"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpoqk"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwl27"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ile"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhq3k"]
+atlas = ExtResource("1_7inxx")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_647dn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp54v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh7jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpoqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwl27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2ile")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhq3k")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="HealthSegment" type="Control" unique_id=74615801]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("1_lp54v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=553497708]
+process_mode = 3
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_647dn")

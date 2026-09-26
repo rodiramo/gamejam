@@ -5,12 +5,17 @@ extends CanvasLayer
 @export var score_manager: ScoreManager
 @export var player: Player
 
+var health_segments: Array[HealthSegment] = []
+
 
 func _ready() -> void:
 	rythm_manager.beat_hit.connect(self._on_rythm_manager_beat_hit)
 	score_manager.score_updated.connect(self._on_score_manager_score_updated)
 	score_manager.multiplier_updated.connect(self._on_score_manager_multiplier_updated)
 	player.health_updated.connect(self._on_player_health_updated)
+	
+	for child in $HealthSegments.get_children():
+		health_segments.append(child)
 
 
 func _on_rythm_manager_beat_hit(beat: int) -> void:
@@ -22,8 +27,12 @@ func _on_score_manager_score_updated(score: int) -> void:
 
 
 func _on_score_manager_multiplier_updated(multiplier: float) -> void:
-	$MultiplierLabel.text = "Multiplier: %.02fx" % multiplier
+	$MultiplierLabel.text = "x%.02f" % multiplier
 
 
 func _on_player_health_updated(health: int, max_health: int) -> void:
-	$HealthLabel.text = "Health: %d/%d" % [health, max_health]
+	for i in range(max_health):
+		if i < health:
+			health_segments[i].reset()
+		elif i == health:
+			health_segments[i].lose()

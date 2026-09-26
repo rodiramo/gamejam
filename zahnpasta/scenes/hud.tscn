@@ -1,45 +1,67 @@
 [gd_scene format=3 uid="uid://cp85rll4tblkg"]
 
 [ext_resource type="Script" uid="uid://ciy3gogsjkd7v" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="PackedScene" uid="uid://mwyc6sedny4j" path="res://scenes/health_segment.tscn" id="2_oo0fn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" unique_id=320943947]
 script = ExtResource("1_ahhtf")
 
 [node name="BeatLabel" type="Label" parent="." unique_id=1053810022]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -39.0
+offset_right = 27.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "Beat: 0"
+label_settings = SubResource("LabelSettings_0wfyh")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1541245567]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_top = 24.0
-offset_bottom = 47.0
-grow_horizontal = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 77.0
+offset_bottom = 39.0
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_oo0fn")
 
 [node name="MultiplierLabel" type="Label" parent="." unique_id=1155020955]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -85.0
-offset_top = 48.0
-offset_bottom = 71.0
-grow_horizontal = 0
-text = "Multiplier: 1x"
+offset_left = 272.0
+offset_top = 28.0
+offset_right = 374.0
+offset_bottom = 51.0
+text = "x1"
+label_settings = SubResource("LabelSettings_5ysmq")
 
-[node name="HealthLabel" type="Label" parent="." unique_id=495610580]
+[node name="HealthSegments" type="HBoxContainer" parent="." unique_id=2019899044]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -85.0
-offset_top = 72.0
-offset_bottom = 95.0
+offset_left = -160.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
 grow_horizontal = 0
-text = "Health: 5/5"
+
+[node name="HealthSegment1" parent="HealthSegments" unique_id=74615801 instance=ExtResource("2_oo0fn")]
+layout_mode = 2
+
+[node name="HealthSegment2" parent="HealthSegments" unique_id=1121449521 instance=ExtResource("2_oo0fn")]
+layout_mode = 2
+
+[node name="HealthSegment3" parent="HealthSegments" unique_id=2017509026 instance=ExtResource("2_oo0fn")]
+layout_mode = 2

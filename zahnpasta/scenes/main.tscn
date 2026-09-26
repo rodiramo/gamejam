@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://btbvd2gfedrgl"]
 
 [ext_resource type="Script" uid="uid://bdp3qatk8ifok" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://d0iipl28d07er" path="res://assets/sprites/bg_main.png" id="2_0wfyh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o5qli"]
 font_size = 64
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D" unique_id=1258310054]
 process_mode = 3
 script = ExtResource("1_o5qli")
 
 [node name="MainMenu" type="CanvasLayer" parent="." unique_id=392157811]
+
+[node name="Background" type="TextureRect" parent="MainMenu" unique_id=23171570]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0wfyh")
 
 [node name="GameTitle" type="Label" parent="MainMenu" unique_id=887220788]
 anchors_preset = 5
