@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
 		step(-1)
 
 func step(value: int):
-	if !allowed_to_move:
+	if !allowed_to_move or ReplaySettings.is_replay:
 		return
 		
 	var double_step = 2 if Input.is_action_pressed("double_step") else 1

@@ -22,8 +22,10 @@
 script = ExtResource("1_w8frs")
 config = ExtResource("2_olg7q")
 
-[node name="MovementTracker" parent="." unique_id=486611869 node_paths=PackedStringArray("rythem_manager") instance=ExtResource("3_ux5qa")]
+[node name="MovementTracker" parent="." unique_id=486611869 node_paths=PackedStringArray("rythem_manager", "grid", "player") instance=ExtResource("3_ux5qa")]
 rythem_manager = NodePath("../RythmManager")
+grid = NodePath("../Grid")
+player = NodePath("../Player")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 
