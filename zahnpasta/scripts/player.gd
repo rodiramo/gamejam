@@ -1,5 +1,5 @@
 class_name Player
-extends StaticBody2D
+extends Area2D
 
 signal health_updated(health: int, max_health: int)
 signal moved
@@ -10,6 +10,7 @@ const MIN_STEPS = 0
 const MAX_HEALTH = 5
 
 @export var grid: Grid
+@export var score_manager: ScoreManager
 
 @onready var audio_player = $AudioStreamPlayer2D
 
@@ -34,6 +35,7 @@ func _process(_delta: float) -> void:
 		step(1)
 	elif Input.is_action_just_pressed("down"):
 		step(-1)
+
 
 func step(value: int):
 	var double_step = 2 if Input.is_action_pressed("double_step") else 1
@@ -61,3 +63,10 @@ func play_note(pitch: int) -> void:
 func take_damage() -> void:
 	current_health -= 1
 	health_updated.emit(current_health, MAX_HEALTH)
+	score_manager.update_combo(0)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bullets"):
+		take_damage()
+		area.queue_free()
