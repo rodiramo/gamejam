@@ -4,18 +4,23 @@ extends Node
 @onready var stream1 = $Stream1
 
 var current_Stream0 := true
-var intensity_data = ["res://assets/musik/test.mp3", "res://assets/musik/test.mp3", "res://assets/musik/test.mp3", "res://assets/musik/test2.mp3"]
+var intensity_data = [
+	preload("res://assets/musik/test.mp3"), 
+	preload("res://assets/musik/test2.mp3"), 
+	preload("res://assets/musik/test.mp3"), 
+	preload("res://assets/musik/test2.mp3")
+]
 
 
 func _ready() -> void:
-	stream0.audio_player.stream = load(intensity_data[0])
+	stream0.audio_player.stream = intensity_data[0]
 	stream0.audio_player.play(0.0)
 
 
 func switch(fromStream: Variant, toStream: Variant, intensity: int):
 	var playback_pos = fromStream.audio_player.get_playback_position()
 
-	toStream.audio_player.stream = load(intensity_data[intensity])
+	toStream.audio_player.stream = intensity_data[intensity]
 	toStream.audio_player.volume_linear = 0.0
 	toStream.audio_player.play(playback_pos)
 
