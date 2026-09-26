@@ -16,6 +16,43 @@ font_color = Color(0, 0, 0, 1)
 font_size = 12
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_uo2fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.22, 5.22)]
+}
+
+[sub_resource type="Animation" id="Animation_047uy"]
+resource_name = "bounce1"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pdws"]
+_data = {
+&"RESET": SubResource("Animation_uo2fv"),
+&"bounce1": SubResource("Animation_047uy")
+}
+
 [node name="HUD" type="CanvasLayer" unique_id=320943947]
 script = ExtResource("1_ahhtf")
 
@@ -51,15 +88,6 @@ offset_bottom = 63.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_oo0fn")
 
-[node name="MultiplierLabel" type="Label" parent="." unique_id=1155020955]
-offset_left = 256.0
-offset_top = 40.0
-offset_right = 358.0
-offset_bottom = 63.0
-text = "x1"
-label_settings = SubResource("LabelSettings_5ysmq")
-vertical_alignment = 2
-
 [node name="HealthSegments" type="HBoxContainer" parent="." unique_id=2019899044]
 anchors_preset = 1
 anchor_left = 1.0
@@ -90,5 +118,43 @@ offset_bottom = -16.0
 grow_vertical = 0
 texture_normal = ExtResource("3_6fi6k")
 texture_hover = ExtResource("4_uo2fv")
+
+[node name="Multiplier" type="Control" parent="." unique_id=1818898960]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.00002
+offset_top = -170.0
+offset_right = -176.00002
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.5235988
+scale = Vector2(5.22, 5.22)
+pivot_offset = Vector2(20, 20)
+
+[node name="MultiplierLabel" type="Label" parent="Multiplier" unique_id=1155020955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x1"
+label_settings = SubResource("LabelSettings_5ysmq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplier" unique_id=198929677]
+libraries/ = SubResource("AnimationLibrary_5pdws")
+autoplay = &"RESET"
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
