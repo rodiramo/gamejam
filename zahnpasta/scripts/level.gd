@@ -118,6 +118,7 @@ func _on_game_ended_overlay_retry_pressed() -> void:
 
 
 func _on_game_ended_overlay_replay_pressed() -> void:
-	var history = movement_tracker.get_history()
-	ReplaySettings.set_history(history)
+	if !ReplaySettings.is_replay:
+		var history = movement_tracker.get_history()
+		ReplaySettings.set_history(history)
 	ReplaySettings.set_to_replay()

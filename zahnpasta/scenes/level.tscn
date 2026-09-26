@@ -52,6 +52,7 @@ offset = Vector2(8, 58)
 grid = NodePath("../Grid")
 score_manager = NodePath("../ScoreManager")
 rythm_manager = NodePath("../RythmManager")
+movement_tracker = NodePath("../MovementTracker")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 position = Vector2(24, 105)
