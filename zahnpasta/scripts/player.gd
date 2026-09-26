@@ -15,12 +15,12 @@ const MAX_HEALTH = 3
 @onready var audio_player = $AudioStreamPlayer2D
 
 var note_audios = [
-	preload("res://assets/sounds/notes/Flute_C4.wav"),
-	preload("res://assets/sounds/notes/Flute_D4.wav"),
-	preload("res://assets/sounds/notes/Flute_Eb4.wav"),
-	preload("res://assets/sounds/notes/Flute_F4.wav"),
-	preload("res://assets/sounds/notes/Flute_G4.wav")
-	]
+	preload("res://assets/sounds/notes/Flute05.wav"),
+	preload("res://assets/sounds/notes/Flute04.wav"),
+	preload("res://assets/sounds/notes/Flute03.wav"),
+	preload("res://assets/sounds/notes/Flute02.wav"),
+	preload("res://assets/sounds/notes/Flute01.wav")
+]
 
 var current_pitch: int = 2
 var current_health: int = MAX_HEALTH
