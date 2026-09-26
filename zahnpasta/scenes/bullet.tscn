@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5h6gni6n581w" path="res://assets/sprites/BasicNote12fps.png" id="4_eoqba"]
 [ext_resource type="Texture2D" uid="uid://bvgmjducbjpt1" path="res://assets/sprites/PurpleEnemy12fps.png" id="5_qncy5"]
 [ext_resource type="Texture2D" uid="uid://c1n5mtw4dv57g" path="res://assets/sprites/ToiletPaperAnimatedEyes12fps.png" id="6_tamys"]
+[ext_resource type="Texture2D" uid="uid://dtlqa4omtxrye" path="res://assets/sprites/shadow.png" id="7_1cfmv"]
 [ext_resource type="Animation" uid="uid://fy0j2jmw6lwv" path="res://animations/jump.res" id="7_26lx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h08rg"]
@@ -406,26 +407,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites:position")
+tracks/0/path = NodePath("Sprites/shadow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(16.23, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites:scale")
+tracks/1/path = NodePath("Sprites/shadow:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.75, 0.75)]
 }
 
 [sub_resource type="Animation" id="Animation_1cfmv"]
@@ -434,19 +435,19 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Sprites/character:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(100, -50), Vector2(30, -60), Vector2(4.57, -30), Vector2(0, 0)]
+"values": [Vector2(100, -80), Vector2(30, -90), Vector2(4.57, -60), Vector2(0, -30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites:scale")
+tracks/1/path = NodePath("Sprites/character:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -454,6 +455,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.53, 1.53), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(100, 0), Vector2(30, 0), Vector2(4.57, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06654045, 0.16756095, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.42, 0.42), Vector2(0.4, 0.4), Vector2(0.51, 0.51), Vector2(0.75, 0.75)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cfmv"]
@@ -471,31 +496,39 @@ shape = SubResource("RectangleShape2D_h08rg")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=290343263]
 
-[node name="Sprite1" type="AnimatedSprite2D" parent="Sprites" unique_id=1559235955 groups=["bullet_sprites"]]
+[node name="shadow" type="Sprite2D" parent="Sprites" unique_id=954880735]
+position = Vector2(16.23, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_1cfmv")
+
+[node name="character" type="Node2D" parent="Sprites" unique_id=1625768878]
+position = Vector2(0, -30)
+
+[node name="Sprite1" type="AnimatedSprite2D" parent="Sprites/character" unique_id=1559235955 groups=["bullet_sprites"]]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"
 
-[node name="Sprite2" type="AnimatedSprite2D" parent="Sprites" unique_id=858477318 groups=["bullet_sprites"]]
+[node name="Sprite2" type="AnimatedSprite2D" parent="Sprites/character" unique_id=858477318 groups=["bullet_sprites"]]
 visible = false
 position = Vector2(0, -38)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_y25gk")
 autoplay = "default"
 
-[node name="Sprite3" type="AnimatedSprite2D" parent="Sprites" unique_id=1527173768 groups=["bullet_sprites"]]
+[node name="Sprite3" type="AnimatedSprite2D" parent="Sprites/character" unique_id=1527173768 groups=["bullet_sprites"]]
 visible = false
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_l5glv")
 autoplay = "default"
 
-[node name="Sprite4" type="AnimatedSprite2D" parent="Sprites" unique_id=985743462 groups=["bullet_sprites"]]
+[node name="Sprite4" type="AnimatedSprite2D" parent="Sprites/character" unique_id=985743462 groups=["bullet_sprites"]]
 visible = false
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_eoqba")
 autoplay = "default"
 
-[node name="Sprite5" type="AnimatedSprite2D" parent="Sprites" unique_id=961283784 groups=["bullet_sprites"]]
+[node name="Sprite5" type="AnimatedSprite2D" parent="Sprites/character" unique_id=961283784 groups=["bullet_sprites"]]
 visible = false
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_sey4q")

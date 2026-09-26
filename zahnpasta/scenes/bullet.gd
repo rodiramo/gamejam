@@ -10,7 +10,7 @@ var _sprites: Array[AnimatedSprite2D] = []
 
 
 func active_sprite(index: int) -> void:
-	for child in $Sprites.get_children():
+	for child in $Sprites/character.get_children():
 		if child.is_in_group("bullet_sprites"):
 			_sprites.append(child)
 	

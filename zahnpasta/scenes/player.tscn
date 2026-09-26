@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cdbtc33qjhgmj" path="res://assets/sounds/notes/Flute03.wav" id="5_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://cxorbrfp0acpt" path="res://assets/sounds/notes/Flute02.wav" id="6_y4r1p"]
 [ext_resource type="AudioStream" uid="uid://gg4nmps78v6h" path="res://assets/sounds/notes/Flute01.wav" id="7_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://dtlqa4omtxrye" path="res://assets/sprites/shadow.png" id="7_ur7pv"]
 [ext_resource type="Animation" uid="uid://fy0j2jmw6lwv" path="res://animations/jump.res" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
@@ -193,14 +194,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites:position")
+tracks/0/path = NodePath("Sprites/shadow:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/character:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
@@ -232,9 +245,13 @@ stream = ExtResource("7_d2wvv")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2011445616]
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Sprites" unique_id=1611927915]
-position = Vector2(0, -6.19)
-scale = Vector2(1.16, 1.16)
+[node name="shadow" type="Sprite2D" parent="Sprites" unique_id=1802418051]
+position = Vector2(-6, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_ur7pv")
+
+[node name="character" type="AnimatedSprite2D" parent="Sprites" unique_id=1611927915]
+position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"
 
