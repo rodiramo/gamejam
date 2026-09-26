@@ -26,6 +26,7 @@ config = ExtResource("2_olg7q")
 rythem_manager = NodePath("../RythmManager")
 grid = NodePath("../Grid")
 player = NodePath("../Player")
+rythem_manager = NodePath("../RythmManager")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 
