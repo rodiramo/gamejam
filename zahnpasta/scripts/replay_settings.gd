@@ -33,8 +33,11 @@ func get_next_snapshot_batch() -> Array[Snapshot]:
 	if current_snapshot >= history.size(): 
 		return []
 	
+	print("Getting Snapshot batch")
 	var beat = history[current_snapshot].beat
-	var snapshots = _get_all_in_beat_starting(current_snapshot + 1, beat)
+	var snapshots = _get_all_in_beat_starting(current_snapshot, beat)
+	
+	print("Got a Batch of: ", snapshots.size())
 	current_snapshot += snapshots.size()
 	
 	return snapshots

@@ -8,19 +8,23 @@ extends Node
 @export var rythem_manager: RythmManager
 
 var current_snapshots: Array[Snapshot]
-var current_snapshot_in_beat: int
+var current_snapshot_in_batch: int
 var current_snapshots_beat: int
 
 func _ready() -> void:
 	if !ReplaySettings.player_controlled:
+		print()
+		print()
+		print()
+		print("Starting Replay")
 		print("Not player Controlled anymore")
 		print("History size: ", ReplaySettings.history.size())
 		
 		current_snapshots = ReplaySettings.get_next_snapshot_batch()
-		current_snapshot_in_beat = 0
+		current_snapshot_in_batch = 0
 		current_snapshots_beat = current_snapshots[0].beat
-		
-		print("Snapshot beat: ", current_snapshots_beat)
+		print("Current batch size: ", current_snapshots.size())
+		print("Current batch first beat: ", current_snapshots_beat)
 		
 		rythem_manager.beat_hit.connect(on_beat)
 		timer.timeout.connect(_on_timer_timeout)
@@ -43,12 +47,12 @@ func on_beat(beat: int):
 	print("Beat it! ", beat)
 	if current_snapshots_beat == beat:
 		print("Been Beaten")
-		timer.start(current_snapshots[current_snapshot_in_beat].in_between_time)
+		timer.start(current_snapshots[current_snapshot_in_batch].in_between_time)
 
 
 func _on_timer_timeout() -> void:
 	timer.stop()
-	match current_snapshots[current_snapshot_in_beat].move_type:
+	match current_snapshots[current_snapshot_in_batch].move_type:
 		Snapshot.MoveType.UP:
 			player.move(1, false)
 		Snapshot.MoveType.DASH_UP:
@@ -58,10 +62,11 @@ func _on_timer_timeout() -> void:
 		Snapshot.MoveType.DASH_DOWN:
 			player.move(-1, true)
 	
-	if current_snapshots.size() -1 > current_snapshot_in_beat:
-		current_snapshot_in_beat += 1
-		timer.start(current_snapshots[current_snapshot_in_beat].in_between_time)
+	if current_snapshots.size() -1 > current_snapshot_in_batch:
+		current_snapshot_in_batch += 1
+		timer.start(current_snapshots[current_snapshot_in_batch].in_between_time)
 	else:
-		current_snapshot_in_beat = 0
+		current_snapshot_in_batch = 0
 		current_snapshots = ReplaySettings.get_next_snapshot_batch()
-		current_snapshots_beat = current_snapshots[0].beat
+		if current_snapshots.size() > 0:
+			current_snapshots_beat = current_snapshots[0].beat
