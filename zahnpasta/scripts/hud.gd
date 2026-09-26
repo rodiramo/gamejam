@@ -5,6 +5,8 @@ extends CanvasLayer
 @export var score_manager: ScoreManager
 @export var player: Player
 
+@export var multiplier_label_base_font_size: int = 16
+
 var health_segments: Array[HealthSegment] = []
 
 
@@ -27,7 +29,8 @@ func _on_score_manager_score_updated(score: int) -> void:
 
 
 func _on_score_manager_multiplier_updated(multiplier: float) -> void:
-	$MultiplierLabel.text = "x%.02f" % multiplier
+	$MultiplierLabel.text = "x%d" % multiplier
+	$MultiplierLabel.label_settings.font_size = clampi(multiplier_label_base_font_size + multiplier_label_base_font_size * multiplier * 0.1, multiplier_label_base_font_size, multiplier_label_base_font_size * 2)
 
 
 func _on_player_health_updated(health: int, max_health: int) -> void:

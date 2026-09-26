@@ -46,6 +46,8 @@ offset_right = 374.0
 offset_bottom = 51.0
 text = "x1"
 label_settings = SubResource("LabelSettings_5ysmq")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HealthSegments" type="HBoxContainer" parent="." unique_id=2019899044]
 anchors_preset = 1
