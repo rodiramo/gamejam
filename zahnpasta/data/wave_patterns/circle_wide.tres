@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="WavePattern" format=3 uid="uid://dk8j5vfcm477j"]
+
+[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="1_7lv2d"]
+[ext_resource type="Script" uid="uid://dhph65equ00la" path="res://data/spawns.gd" id="2_vakge"]
+
+[sub_resource type="Resource" id="Resource_rvewm"]
+script = ExtResource("2_vakge")
+spawns_on_spawner = Array[int]([0, 0, 1, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_7g02g"]
+script = ExtResource("2_vakge")
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_lqnvg"]
+script = ExtResource("2_vakge")
+spawns_on_spawner = Array[int]([0, 1, 0, 1, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_6hfby"]
+script = ExtResource("2_vakge")
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_lx01f"]
+script = ExtResource("2_vakge")
+spawns_on_spawner = Array[int]([1, 0, 1, 0, 1])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_nteao"]
+script = ExtResource("2_vakge")
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_kdool"]
+script = ExtResource("2_vakge")
+spawns_on_spawner = Array[int]([0, 1, 0, 1, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_gxg2w"]
+script = ExtResource("2_vakge")
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_p3cjg"]
+script = ExtResource("2_vakge")
+spawns_on_spawner = Array[int]([0, 0, 1, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[resource]
+script = ExtResource("1_7lv2d")
+spawns_per_beat = Array[ExtResource("2_vakge")]([SubResource("Resource_rvewm"), SubResource("Resource_7g02g"), SubResource("Resource_lqnvg"), SubResource("Resource_6hfby"), SubResource("Resource_lx01f"), SubResource("Resource_nteao"), SubResource("Resource_kdool"), SubResource("Resource_gxg2w"), SubResource("Resource_p3cjg")])
+metadata/_custom_type_script = "uid://cgw4yku1mc5jk"
