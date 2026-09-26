@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cga4qxjihgg3f" path="res://scenes/grid.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://cp85rll4tblkg" path="res://scenes/hud.tscn" id="6_2r41h"]
+[ext_resource type="Script" uid="uid://dvb8wu7tqcrey" path="res://scripts/musik_player.gd" id="7_b121j"]
+[ext_resource type="Script" uid="uid://cj11mkjjmpa0c" path="res://scripts/stream.gd" id="8_8c41q"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
@@ -25,3 +27,14 @@ cells_x = 10
 
 [node name="HUD" parent="." unique_id=320943947 node_paths=PackedStringArray("rythm_manager") instance=ExtResource("6_2r41h")]
 rythm_manager = NodePath("../RythmManager")
+
+[node name="MusicPlayer" type="Node" parent="." unique_id=926297929]
+script = ExtResource("7_b121j")
+
+[node name="Stream0" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=349253826]
+script = ExtResource("8_8c41q")
+
+[node name="Stream1" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2041139611]
+script = ExtResource("8_8c41q")
+
+[connection signal="switch_audio" from="." to="MusicPlayer" method="_on_level_switch_audio"]
