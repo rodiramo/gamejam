@@ -4,9 +4,11 @@ extends StaticBody2D
 signal health_updated(health: int, max_health: int)
 
 const STEP_SIZE = 100
-const MAX_STEPS = 5
+const MAX_STEPS = 4
 const MIN_STEPS = 0
 const MAX_HEALTH = 5
+
+@export var grid: Grid
 
 @onready var audio_player = $AudioStreamPlayer2D
 
@@ -21,34 +23,32 @@ var note_audios = [
 var current_pitch: int = 2
 var current_health: int = MAX_HEALTH
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	_move_on_grid()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		step(1)
-
-	if Input.is_action_just_pressed("down"):
+	elif Input.is_action_just_pressed("down"):
 		step(-1)
 
 func step(value: int):
 	var double_step = 2 if Input.is_action_pressed("double_step") else 1
 	
-	var new_pos = current_pitch + (value * double_step)
-	if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
-		double_step = 1
-		new_pos = current_pitch + value
-		if new_pos >= MAX_STEPS or new_pos < MIN_STEPS:
-			return
+	var new_pitch = clampi(current_pitch - (value * double_step), MIN_STEPS, MAX_STEPS)
+	if new_pitch == current_pitch:
+		return
 	
-	position.y -= STEP_SIZE * value * double_step
-	current_pitch += value * double_step
+	current_pitch = new_pitch
+	_move_on_grid()
 	play_note(current_pitch)
-		
+
+
+func _move_on_grid() -> void:
+	grid.move_to_grid(Vector2(0, current_pitch), self)
+
 
 func play_note(pitch: int) -> void:
 	print(pitch)
