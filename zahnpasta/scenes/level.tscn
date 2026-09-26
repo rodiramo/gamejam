@@ -43,3 +43,4 @@ script = ExtResource("8_8c41q")
 script = ExtResource("8_8c41q")
 
 [connection signal="switch_audio" from="." to="MusicPlayer" method="_on_level_switch_audio"]
+[connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]

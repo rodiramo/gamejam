@@ -4,7 +4,8 @@ signal switch_audio(a: int, b: int)
 
 enum State{
 	RUNNING,
-	PAUSED
+	PAUSED,
+	GAME_OVER
 }
 
 @export var config: LevelConfig
@@ -30,3 +31,9 @@ var intensity := 0
 
 func _switch_audio() -> void:
 	switch_audio.emit(intensity, max_intensity)
+
+
+func _on_player_health_updated(health: int, _max_health: int) -> void:
+	if health <= 0:
+		self.rythm_manager.stop()
+		_state = State.GAME_OVER
