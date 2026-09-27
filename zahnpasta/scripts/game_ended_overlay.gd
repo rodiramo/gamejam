@@ -10,6 +10,8 @@ signal back_to_main_menu_pressed
 @onready var score_label = $Panel/ScoreLabel
 @onready var new_highscore_label = $Panel/NewHighscoreLabel
 @onready var video_player = $VideoPlayer
+@onready var game_over_player = $GameOverPlayer
+@onready var game_won_player = $GameWonPlayer
 
 
 var game_over_video = preload("res://assets/videos/game_over_stage.ogv")
@@ -30,6 +32,7 @@ func set_game_won_state(score: int, is_new_highscore: bool) -> void:
 	video_player.show()
 	video_player.stream = game_won_video
 	video_player.play()
+	game_won_player.play()
 	await video_player.finished
 	video_player.hide()
 
@@ -48,6 +51,7 @@ func set_game_over_state(score: int, is_new_highscore: bool) -> void:
 	video_player.show()
 	video_player.stream = game_over_video
 	video_player.play()
+	game_over_player.play()
 	await video_player.finished
 	video_player.hide()
 

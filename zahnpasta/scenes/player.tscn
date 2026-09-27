@@ -292,7 +292,7 @@ libraries/ = SubResource("AnimationLibrary_y4r1p")
 
 [node name="HitSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1621949968]
 stream = ExtResource("10_d2wvv")
-volume_db = 24.0
+volume_db = 18.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=645204252]
 stream = ExtResource("10_y4r1p")
