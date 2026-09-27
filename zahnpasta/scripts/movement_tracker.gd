@@ -10,10 +10,11 @@ var start_position: Vector2 = Vector2(0, 2)
 
 
 func _ready() -> void:
-	rythem_manager.beat_hit.connect(_on_beat)
+	if ReplaySettings.is_replay:
+		rythem_manager.beat_hit.connect(_on_beat)
 	
 
-func _on_beat(beat: int):
+func _on_beat(beat: int, _max_beats: int):
 	var snapshots = ReplaySettings.get_for_beat(beat)
 	if snapshots.is_empty():
 		return

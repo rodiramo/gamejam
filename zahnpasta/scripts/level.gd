@@ -113,6 +113,7 @@ func _on_count_in_timer_timeout() -> void:
 
 
 func _on_game_ended_overlay_retry_pressed() -> void:
+	ReplaySettings.ready_to_play()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
