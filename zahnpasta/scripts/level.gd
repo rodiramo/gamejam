@@ -76,8 +76,6 @@ func end_game(state: State) -> void:
 		game_ended_overlay.set_game_over_state(score_manager.current_score())
 	else:
 		get_tree().exit(1)
-	
-	game_ended_overlay.show()
 
 
 func go_to_main_menu() -> void:

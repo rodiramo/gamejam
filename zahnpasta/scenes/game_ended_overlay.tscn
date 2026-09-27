@@ -145,6 +145,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=480523150]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Panel/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="Panel/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
