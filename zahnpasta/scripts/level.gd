@@ -48,7 +48,10 @@ func _process(_delta: float) -> void:
 
 func resume_game() -> void:
 	self.rythm_manager.start()
-	$AudioStreamPlayer2D.play()
+	if $AudioStreamPlayer2D.stream_paused:
+		$AudioStreamPlayer2D.stream_paused = false
+	else:
+		$AudioStreamPlayer2D.play()
 	_state = State.RUNNING
 	get_tree().paused = false
 	pause_overlay.hide()
