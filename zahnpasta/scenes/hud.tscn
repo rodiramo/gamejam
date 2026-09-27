@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dgpud7kgkxqrs" path="res://assets/progress_bar/progress_quill.png" id="8_mphia"]
 [ext_resource type="Texture2D" uid="uid://c7423k2mlserx" path="res://assets/progress_bar/progress_endbar.png" id="9_0i1j5"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
 font_color = Color(0, 0, 0, 1)
 

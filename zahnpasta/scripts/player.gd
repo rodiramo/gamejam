@@ -12,6 +12,9 @@ const MAX_HEALTH = 3
 @export var grid: Grid
 @export var score_manager: ScoreManager
 @export var rythm_manager: RythmManager
+@export var movement_tracker: MovementTracker
+@export var rythm_manager: RythmManager
+@export var movement_tracker: MovementTracker
 
 @onready var audio_players = [
 	$AudioPitchLane0,
@@ -39,7 +42,7 @@ func _process(_delta: float) -> void:
 		step(-1)
 
 func step(value: int):
-	if !allowed_to_move:
+	if !allowed_to_move or ReplaySettings.is_replay:
 		return
 		
 	var double_step = 2 if Input.is_action_pressed("double_step") else 1
@@ -48,6 +51,7 @@ func step(value: int):
 	if new_pitch == current_pitch:
 		return
 	
+	movement_tracker.track_move_to(Vector2(0, new_pitch))
 	current_pitch = new_pitch
 	_move_on_grid()
 	moved.emit()
@@ -61,7 +65,7 @@ func _move_on_grid() -> void:
 func play_note(pitch: int) -> void:
 	for stream in audio_players:
 		stream.stop()
-	audio_players[current_pitch].play()
+	audio_players[pitch].play()
 
 
 func take_damage() -> void:

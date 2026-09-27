@@ -93,3 +93,11 @@ func _set_max_beats_from_level_config() -> void:
 
 func _on_timer_timeout() -> void:
 	self.process_beat()
+
+
+func get_current_beat():
+	return _current_beat
+
+
+func get_time_since_beat():
+	return timer.wait_time - timer.time_left
