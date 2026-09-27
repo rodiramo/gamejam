@@ -10,13 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://c5egssp203spm" path="res://scenes/bullet.tscn" id="4_klq6b"]
 [ext_resource type="PackedScene" uid="uid://cga4qxjihgg3f" path="res://scenes/grid.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://cp85rll4tblkg" path="res://scenes/hud.tscn" id="6_2r41h"]
-[ext_resource type="Script" uid="uid://dvb8wu7tqcrey" path="res://scripts/musik_player.gd" id="7_b121j"]
 [ext_resource type="Texture2D" uid="uid://d0iipl28d07er" path="res://assets/sprites/bg_main.png" id="7_wc255"]
-[ext_resource type="Script" uid="uid://cj11mkjjmpa0c" path="res://scripts/stream.gd" id="8_8c41q"]
 [ext_resource type="Texture2D" uid="uid://cihxgldtavdlj" path="res://assets/sprites/bg_lines.png" id="8_arp2o"]
 [ext_resource type="PackedScene" uid="uid://cuc7ce0ofprwu" path="res://scenes/count_in_overlay.tscn" id="12_8iemx"]
 [ext_resource type="PackedScene" uid="uid://b3a5h0pl4afa5" path="res://scenes/pause_overlay.tscn" id="13_64w2a"]
 [ext_resource type="PackedScene" uid="uid://khcy8acak5xq" path="res://scenes/game_ended_overlay.tscn" id="14_fpun6"]
+[ext_resource type="AudioStream" uid="uid://cm0kc4ngqrw8n" path="res://assets/musik/Zahnpastatypebeat2.mp3" id="15_wc255"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
@@ -68,16 +67,6 @@ rythm_manager = NodePath("../RythmManager")
 score_manager = NodePath("../ScoreManager")
 player = NodePath("../Player")
 
-[node name="MusicPlayer" type="Node" parent="." unique_id=926297929]
-script = ExtResource("7_b121j")
-
-[node name="Stream0" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=349253826]
-mix_target = 1
-script = ExtResource("8_8c41q")
-
-[node name="Stream1" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2041139611]
-script = ExtResource("8_8c41q")
-
 [node name="CountInOverlay" parent="." unique_id=1693649273 instance=ExtResource("12_8iemx")]
 visible = false
 
@@ -90,8 +79,11 @@ visible = false
 [node name="CountInTimer" type="Timer" parent="." unique_id=412634349]
 autostart = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1673384060]
+stream = ExtResource("15_wc255")
+volume_db = 12.0
+
 [connection signal="player_move" from="." to="Player" method="_on_level_player_move"]
-[connection signal="switch_audio" from="." to="MusicPlayer" method="_on_level_switch_audio"]
 [connection signal="level_ended" from="RythmManager" to="." method="_on_rythm_manager_level_ended"]
 [connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]
 [connection signal="moved" from="Player" to="." method="_on_player_moved"]

@@ -266,4 +266,12 @@ offset_right = 40.0
 grow_vertical = 0
 texture = ExtResource("8_mphia")
 
+[node name="Label" type="Label" parent="." unique_id=839204940]
+offset_left = 539.0
+offset_top = 166.0
+offset_right = 579.0
+offset_bottom = 215.0
+text = "BPM
+"
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://gg4nmps78v6h" path="res://assets/sounds/notes/Flute01.wav" id="7_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dtlqa4omtxrye" path="res://assets/sprites/shadow.png" id="7_ur7pv"]
 [ext_resource type="Animation" uid="uid://fy0j2jmw6lwv" path="res://animations/jump.res" id="8_smehm"]
+[ext_resource type="AudioStream" uid="uid://c5ujm06yrigtn" path="res://assets/sounds/wood block high.wav" id="10_y4r1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(48, 45)
@@ -258,5 +259,9 @@ autoplay = "default"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1048662540]
 libraries/ = SubResource("AnimationLibrary_y4r1p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=645204252]
+stream = ExtResource("10_y4r1p")
+volume_db = 8.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

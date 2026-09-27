@@ -438,10 +438,10 @@ tracks/0/path = NodePath("Sprites/character:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.5),
-"transitions": PackedFloat32Array(1.866066, 0.2679432, 0.2679432),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2679432, 0.2679432),
 "update": 0,
-"values": [Vector2(30, -30), Vector2(10, -50), Vector2(0, -30)]
+"values": [Vector2(10, -50), Vector2(0, -30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -450,10 +450,10 @@ tracks/1/path = NodePath("Sprites/character:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.031873275, 0.032665312, 0.06374655),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.06374655),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1.4875752, 1.4875752), Vector2(1, 1)]
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -474,10 +474,10 @@ tracks/3/path = NodePath("Sprites/shadow:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.5),
-"transitions": PackedFloat32Array(1.7148376, 0.24999979, 0.24999979),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.24999979, 0.24999979),
 "update": 0,
-"values": [Vector2(30, 2), Vector2(10, 2), Vector2(0, 2)]
+"values": [Vector2(10, 2), Vector2(0, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_1cfmv"]
