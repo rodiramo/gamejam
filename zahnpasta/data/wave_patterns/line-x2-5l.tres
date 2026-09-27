@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="WavePattern" format=3 uid="uid://b0hgwye085x57"]
+
+[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="1_qsyqw"]
+[ext_resource type="Script" uid="uid://dhph65equ00la" path="res://data/spawns.gd" id="2_yjgi6"]
+
+[sub_resource type="Resource" id="Resource_xbdr6"]
+script = ExtResource("2_yjgi6")
+spawns_on_spawner = Array[int]([0, 1, 0, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_0ab5o"]
+script = ExtResource("2_yjgi6")
+spawns_on_spawner = Array[int]([0, 1, 0, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_s1dhi"]
+script = ExtResource("2_yjgi6")
+spawns_on_spawner = Array[int]([0, 1, 0, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_swpbn"]
+script = ExtResource("2_yjgi6")
+spawns_on_spawner = Array[int]([0, 1, 0, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[sub_resource type="Resource" id="Resource_n4giu"]
+script = ExtResource("2_yjgi6")
+spawns_on_spawner = Array[int]([0, 1, 0, 0, 0])
+metadata/_custom_type_script = "uid://dhph65equ00la"
+
+[resource]
+script = ExtResource("1_qsyqw")
+spawns_per_beat = Array[ExtResource("2_yjgi6")]([SubResource("Resource_xbdr6"), SubResource("Resource_0ab5o"), SubResource("Resource_s1dhi"), SubResource("Resource_swpbn"), SubResource("Resource_n4giu")])
+metadata/_custom_type_script = "uid://cgw4yku1mc5jk"

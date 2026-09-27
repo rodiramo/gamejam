@@ -26,6 +26,10 @@ window/size/viewport_width=854
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rhythm_level_creator/plugin.cfg")
+
 [gui]
 
 theme/custom_font="uid://cxwfgwqu8rh43"

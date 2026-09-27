@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://qrw17e5cybi8"]
+
+[ext_resource type="Script" uid="uid://cu06of5pek0a3" path="res://data/bpm_section.gd" id="1_bpm"]
+[ext_resource type="Script" uid="uid://bxwm6geyls5vf" path="res://data/level_config.gd" id="2_level"]
+[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="3_wave"]
+[ext_resource type="Resource" uid="uid://duejhus738qkr" path="res://data/wave_patterns/empty.tres" id="4_empty"]
+[ext_resource type="Resource" uid="uid://dsw35ldtnnf75" path="res://data/wave_patterns/line-5l.tres" id="5_line5"]
+[ext_resource type="Resource" uid="uid://c6cguhpomadyg" path="res://data/wave_patterns/line.tres" id="6_line"]
+[ext_resource type="Resource" uid="uid://8sqc8a1chdp8" path="res://data/wave_patterns/2line-x2_4-5l.tres" id="7_double_inner"]
+[ext_resource type="Resource" uid="uid://m7yalebq4prm" path="res://data/wave_patterns/2line-x1_5-5l.tres" id="8_double_outer"]
+[ext_resource type="Resource" uid="uid://dfhgcj56cwqws" path="res://data/wave_patterns/diagonal_line_right_top_missing.tres" id="9_diag_right"]
+[ext_resource type="Resource" uid="uid://b2035fjwl5e0u" path="res://data/wave_patterns/diagonal_line_left_bottom_missing.tres" id="10_diag_left"]
+[ext_resource type="Resource" uid="uid://cw2dtj705wlkc" path="res://data/wave_patterns/stairs_down.tres" id="11_stairs"]
+[ext_resource type="Resource" uid="uid://b58ohjvck5whg" path="res://data/wave_patterns/sin_curve.tres" id="12_sin"]
+[ext_resource type="Resource" uid="uid://cosmadd0l4vmb" path="res://data/wave_patterns/line-x2.tres" id="13_line_left"]
+[ext_resource type="Resource" uid="uid://cv3tn32xl4w1v" path="res://data/wave_patterns/diamond.tres" id="14_diamond"]
+[ext_resource type="Resource" uid="uid://pmd4ek8arsi1" path="res://data/wave_patterns/circle_light.tres" id="15_circle_light"]
+[ext_resource type="Resource" uid="uid://dk8j5vfcm477j" path="res://data/wave_patterns/circle_wide.tres" id="16_circle_wide"]
+[ext_resource type="Resource" uid="uid://bws0xvt2jbngt" path="res://data/wave_patterns/cos_curve.tres" id="17_cos"]
+[ext_resource type="Resource" uid="uid://c7ki66uuyo50i" path="res://data/wave_patterns/diagonal_line.tres" id="18_diagonal"]
+[ext_resource type="Resource" uid="uid://bs2m11ktita3x" path="res://data/wave_patterns/diagonal_lines.tres" id="19_diagonal_lines"]
+[ext_resource type="Resource" uid="uid://bwrwupdea33k2" path="res://data/wave_patterns/diamond_light.tres" id="20_diamond_light"]
+[ext_resource type="Resource" uid="uid://1sdvq238lfot" path="res://data/wave_patterns/diamond_small.tres" id="21_diamond_small"]
+[ext_resource type="Resource" uid="uid://e24kmoalewhi" path="res://data/wave_patterns/square.tres" id="22_square"]
+[ext_resource type="Resource" uid="uid://cuuf4phqxe6d4" path="res://data/wave_patterns/wedge.tres" id="23_wedge"]
+[ext_resource type="Resource" uid="uid://b0hgwye085x57" path="res://data/wave_patterns/line-x2-5l.tres" id="24_line_left5"]
+
+[sub_resource type="Resource" id="BPM_intro"]
+script = ExtResource("1_bpm")
+bpm = 110.0
+beats = 112
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_build1"]
+script = ExtResource("1_bpm")
+bpm = 115.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_build2"]
+script = ExtResource("1_bpm")
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_build3"]
+script = ExtResource("1_bpm")
+bpm = 125.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_build4"]
+script = ExtResource("1_bpm")
+bpm = 130.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_build5"]
+script = ExtResource("1_bpm")
+bpm = 135.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_drop"]
+script = ExtResource("1_bpm")
+bpm = 146.0
+beats = 36
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="BPM_finale"]
+script = ExtResource("1_bpm")
+bpm = 162.0
+beats = 90
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[resource]
+script = ExtResource("2_level")
+bpm_sections = Array[ExtResource("1_bpm")]([SubResource("BPM_intro"), SubResource("BPM_build1"), SubResource("BPM_build2"), SubResource("BPM_build3"), SubResource("BPM_build4"), SubResource("BPM_build5"), SubResource("BPM_drop"), SubResource("BPM_finale")])
+waves = Array[ExtResource("3_wave")]([ExtResource("4_empty"), ExtResource("4_empty"), ExtResource("4_empty"), ExtResource("4_empty"), ExtResource("20_diamond_light"), ExtResource("4_empty"), ExtResource("15_circle_light"), ExtResource("4_empty"), ExtResource("21_diamond_small"), ExtResource("4_empty"), ExtResource("5_line5"), ExtResource("4_empty"), ExtResource("6_line"), ExtResource("4_empty"), ExtResource("9_diag_right"), ExtResource("4_empty"), ExtResource("10_diag_left"), ExtResource("4_empty"), ExtResource("12_sin"), ExtResource("4_empty"), ExtResource("17_cos"), ExtResource("4_empty"), ExtResource("16_circle_wide"), ExtResource("4_empty"), ExtResource("18_diagonal"), ExtResource("4_empty"), ExtResource("19_diagonal_lines"), ExtResource("4_empty"), ExtResource("7_double_inner"), ExtResource("4_empty"), ExtResource("8_double_outer"), ExtResource("4_empty"), ExtResource("14_diamond"), ExtResource("22_square"), ExtResource("23_wedge"), ExtResource("4_empty"), ExtResource("6_line"), ExtResource("12_sin"), ExtResource("17_cos"), ExtResource("19_diagonal_lines"), ExtResource("6_line"), ExtResource("13_line_left"), ExtResource("16_circle_wide"), ExtResource("20_diamond_light"), ExtResource("6_line"), ExtResource("11_stairs"), ExtResource("4_empty"), ExtResource("14_diamond"), ExtResource("4_empty"), ExtResource("6_line"), ExtResource("7_double_inner"), ExtResource("8_double_outer"), ExtResource("22_square"), ExtResource("23_wedge"), ExtResource("19_diagonal_lines"), ExtResource("12_sin"), ExtResource("17_cos"), ExtResource("4_empty"), ExtResource("11_stairs"), ExtResource("14_diamond"), ExtResource("4_empty"), ExtResource("16_circle_wide"), ExtResource("19_diagonal_lines"), ExtResource("12_sin"), ExtResource("17_cos"), ExtResource("11_stairs"), ExtResource("14_diamond"), ExtResource("7_double_inner"), ExtResource("8_double_outer"), ExtResource("9_diag_right"), ExtResource("10_diag_left"), ExtResource("18_diagonal"), ExtResource("5_line5"), ExtResource("24_line_left5"), ExtResource("22_square"), ExtResource("23_wedge"), ExtResource("21_diamond_small"), ExtResource("20_diamond_light")])
+metadata/_custom_type_script = "uid://bxwm6geyls5vf"
