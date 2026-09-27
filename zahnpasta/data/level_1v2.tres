@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://d3v6fp7qfl5p8"]
+
+[ext_resource type="Script" uid="uid://cu06of5pek0a3" path="res://data/bpm_section.gd" id="1_6m2wh"]
+[ext_resource type="Script" uid="uid://bxwm6geyls5vf" path="res://data/level_config.gd" id="2_t516q"]
+[ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="3_iowlv"]
+[ext_resource type="Resource" uid="uid://dsw35ldtnnf75" path="res://data/wave_patterns/line-5l.tres" id="4_5gyep"]
+[ext_resource type="Resource" uid="uid://duejhus738qkr" path="res://data/wave_patterns/empty.tres" id="4_iowlv"]
+[ext_resource type="Resource" uid="uid://c6cguhpomadyg" path="res://data/wave_patterns/line.tres" id="5_35xmc"]
+[ext_resource type="Resource" uid="uid://8sqc8a1chdp8" path="res://data/wave_patterns/2line-x2_4-5l.tres" id="6_eiwdx"]
+[ext_resource type="Resource" uid="uid://m7yalebq4prm" path="res://data/wave_patterns/2line-x1_5-5l.tres" id="7_c41to"]
+[ext_resource type="Resource" uid="uid://dfhgcj56cwqws" path="res://data/wave_patterns/diagonal_line_right_top_missing.tres" id="8_023i6"]
+[ext_resource type="Resource" uid="uid://b2035fjwl5e0u" path="res://data/wave_patterns/diagonal_line_left_bottom_missing.tres" id="8_jit4c"]
+[ext_resource type="Resource" uid="uid://cw2dtj705wlkc" path="res://data/wave_patterns/stairs_down.tres" id="10_5e41k"]
+[ext_resource type="Resource" uid="uid://b58ohjvck5whg" path="res://data/wave_patterns/sin_curve.tres" id="11_x280y"]
+[ext_resource type="Resource" uid="uid://cosmadd0l4vmb" path="res://data/wave_patterns/line-x2.tres" id="12_1nrpi"]
+[ext_resource type="Resource" uid="uid://cv3tn32xl4w1v" path="res://data/wave_patterns/diamond.tres" id="13_5gyep"]
+
+[sub_resource type="Resource" id="Resource_35xmc"]
+script = ExtResource("1_6m2wh")
+bpm = 110.0
+beats = 112
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_x280y"]
+script = ExtResource("1_6m2wh")
+bpm = 115.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_fuxu6"]
+script = ExtResource("1_6m2wh")
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_5gyep"]
+script = ExtResource("1_6m2wh")
+bpm = 125.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_1nrpi"]
+script = ExtResource("1_6m2wh")
+bpm = 130.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_eiwdx"]
+script = ExtResource("1_6m2wh")
+bpm = 135.0
+beats = 16
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_c41to"]
+script = ExtResource("1_6m2wh")
+bpm = 146.0
+beats = 36
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[sub_resource type="Resource" id="Resource_y0b76"]
+script = ExtResource("1_6m2wh")
+bpm = 162.0
+beats = 90
+metadata/_custom_type_script = "uid://cu06of5pek0a3"
+
+[resource]
+script = ExtResource("2_t516q")
+bpm_sections = Array[ExtResource("1_6m2wh")]([SubResource("Resource_35xmc"), SubResource("Resource_x280y"), SubResource("Resource_fuxu6"), SubResource("Resource_5gyep"), SubResource("Resource_1nrpi"), SubResource("Resource_eiwdx"), SubResource("Resource_c41to"), SubResource("Resource_y0b76")])
+waves = Array[ExtResource("3_iowlv")]([ExtResource("4_5gyep"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("6_eiwdx"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("7_c41to"), ExtResource("8_023i6"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("8_jit4c"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("10_5e41k"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("11_x280y"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("4_iowlv"), ExtResource("12_1nrpi"), ExtResource("5_35xmc"), ExtResource("13_5gyep"), ExtResource("4_iowlv"), ExtResource("4_iowlv")])
+metadata/_custom_type_script = "uid://bxwm6geyls5vf"
