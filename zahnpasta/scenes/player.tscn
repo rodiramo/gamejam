@@ -297,6 +297,6 @@ volume_db = 18.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=645204252]
 stream = ExtResource("10_y4r1p")
-volume_db = 8.0
+volume_db = -80.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
