@@ -23,8 +23,13 @@ func _ready() -> void:
 		health_segments.append(child)
 
 
-func _on_rythm_manager_beat_hit(beat: int) -> void:
-	$BeatLabel.text = "Beat: %d" % beat
+func _on_rythm_manager_beat_hit(beat: int, max_beats: int) -> void:
+	$LevelProgressionBar.max_value = max_beats
+	$LevelProgressionBar.value = beat
+	var progress_vector := Vector2(beat, max_beats)
+	var progress_percent := progress_vector.x / progress_vector.y
+	var progress_bar_progression_width: float = $LevelProgressionBar.size.x * progress_percent
+	$LevelProgressionBar/CurrentMarker.global_position.x = $LevelProgressionBar.global_position.x + progress_bar_progression_width
 
 
 func _on_score_manager_score_updated(score: int) -> void:

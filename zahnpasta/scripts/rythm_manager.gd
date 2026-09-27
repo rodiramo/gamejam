@@ -1,7 +1,7 @@
 class_name RythmManager
 extends Node
 
-signal beat_hit(beat: int)
+signal beat_hit(beat: int, max_beats: int)
 signal level_ended
 
 const ONE_MINUTE = 60.0
@@ -18,6 +18,7 @@ var _current_beat: int = 0
 var _current_bpm_section: int = 0
 var _beats_before_current_section: int = 0
 var _level_config: LevelConfig
+var _max_beats: int = 0
 
 
 func initialize(level_config: LevelConfig) -> void:
@@ -26,6 +27,7 @@ func initialize(level_config: LevelConfig) -> void:
 	_current_bpm_section = 0
 	_beats_before_current_section = 0
 	self._set_beat_interval_from_current_bpm_section()
+	self._set_max_beats_from_level_config()
 
 
 func start() -> void:
@@ -53,7 +55,7 @@ func is_on_beat() -> bool:
 func process_beat() -> void:
 	_current_beat += 1
 	
-	beat_hit.emit(_current_beat)
+	beat_hit.emit(_current_beat, _max_beats)
 	
 	if _should_change_bpm_section():
 		if _has_next_bpm_section():
@@ -80,6 +82,13 @@ func _change_to_next_bpm_section() -> void:
 func _set_beat_interval_from_current_bpm_section() -> void:
 	_current_beat_interval_sec = ONE_MINUTE / _level_config.bpm_sections[_current_bpm_section].bpm
 	$Timer.wait_time = _current_beat_interval_sec
+
+
+func _set_max_beats_from_level_config() -> void:
+	_max_beats = 0
+	
+	for bpm_section in _level_config.bpm_sections:
+		_max_beats += bpm_section.beats
 
 
 func _on_timer_timeout() -> void:

@@ -79,6 +79,6 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_level_player_move(allowed: bool) -> void:
 	allowed_to_move = allowed
 
-func _rythm_manager_beat_hit(beat: int) -> void:
+func _rythm_manager_beat_hit(beat: int, _max_beats: int) -> void:
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("jump")

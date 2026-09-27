@@ -54,6 +54,6 @@ func _get_current_beat_in_wave() -> Spawns:
 	
 	return current_beat
 
-func on_beat(beat: int):
+func on_beat(beat: int, _max_beats: int):
 	_spawn_new_bullets()
 	_move_bullets()

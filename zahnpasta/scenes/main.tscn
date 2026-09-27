@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdp3qatk8ifok" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://b52ublfix6n4s" path="res://assets/buttons/background_start.png" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://b3iq3han4ry2s" path="res://scripts/mouse_cursor_initializer.gd" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://boevl23soiowm" path="res://assets/goofy_ass_game_title.png" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://brpjno6ny4r12" path="res://assets/buttons/start_button.png" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dk247v5dwgh4x" path="res://assets/buttons/start_button_hovered.png" id="5_tefeu"]
@@ -11,6 +12,9 @@
 [node name="Main" type="Node2D" unique_id=1258310054]
 process_mode = 3
 script = ExtResource("1_o5qli")
+
+[node name="MouseCursorInitializer" type="Node" parent="." unique_id=1873434932]
+script = ExtResource("2_tipki")
 
 [node name="MainMenu" type="CanvasLayer" parent="." unique_id=392157811]
 
@@ -47,6 +51,7 @@ offset_right = 161.5
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_tbgi4")
 texture_hover = ExtResource("5_tefeu")
 stretch_mode = 5
@@ -63,6 +68,7 @@ offset_right = 105.5
 offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_tefeu")
 texture_hover = ExtResource("7_o6xl0")
 

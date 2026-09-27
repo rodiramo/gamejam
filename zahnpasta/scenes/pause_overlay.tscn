@@ -46,6 +46,7 @@ offset_right = 107.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_3fhia")
 texture_hover = ExtResource("3_fggc0")
 
@@ -77,6 +78,7 @@ offset_right = 107.0
 offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_3fhia")
 texture_hover = ExtResource("3_fggc0")
 
