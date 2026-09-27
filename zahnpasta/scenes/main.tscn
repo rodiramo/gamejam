@@ -17,6 +17,44 @@ font_color = Color(0, 0, 0, 1)
 font_size = 18
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_tipki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HighscoreContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "pulse"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HighscoreContainer:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1), Vector2(0.95, 0.95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
+_data = {
+&"RESET": SubResource("Animation_tipki"),
+&"pulse": SubResource("Animation_85g3d")
+}
+
 [node name="Main" type="Node2D" unique_id=1258310054]
 process_mode = 3
 script = ExtResource("1_o5qli")
@@ -100,11 +138,12 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 101.999985
-offset_top = -137.0
+offset_top = -153.00003
 offset_right = 257.0
-offset_bottom = -95.0
+offset_bottom = -111.00003
 grow_vertical = 0
 rotation = -0.2508485
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_constants/separation = 24
 
 [node name="Title" type="Label" parent="MainMenu/HighscoreContainer" unique_id=851384494]
@@ -118,6 +157,10 @@ layout_mode = 2
 text = "3000"
 label_settings = SubResource("LabelSettings_sey4q")
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenu" unique_id=1424154009]
+libraries/ = SubResource("AnimationLibrary_choun")
+autoplay = &"pulse"
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
