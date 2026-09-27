@@ -42,6 +42,6 @@ func _update_multiplier() -> void:
 	multiplier_updated.emit(_multiplier)
 
 
-func _on_rythm_manager_beat_hit(_beat: int) -> void:
+func _on_rythm_manager_beat_hit(_beat: int, _max_beats: int) -> void:
 	_score += base_score_per_beat * _multiplier
 	score_updated.emit(_score)

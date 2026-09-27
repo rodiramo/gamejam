@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dhatr3stjiihc" path="res://assets/buttons/menu_icon.png" id="3_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://f3rugswe6yas" path="res://assets/buttons/menu_icon_hover.png" id="4_uo2fv"]
 [ext_resource type="Shader" uid="uid://cvosg08o7no3h" path="res://shader/vignette.gdshader" id="6_047uy"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://c8x8lyxfh1i2w" path="res://assets/progress_bar/progress_track.png" id="7_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://cqhstsi8ip0ek" path="res://assets/progress_bar/progress_fill.png" id="8_0i1j5"]
+[ext_resource type="Texture2D" uid="uid://dgpud7kgkxqrs" path="res://assets/progress_bar/progress_quill.png" id="8_mphia"]
+[ext_resource type="Texture2D" uid="uid://c7423k2mlserx" path="res://assets/progress_bar/progress_endbar.png" id="9_0i1j5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
 font_color = Color(0, 0, 0, 1)
@@ -115,23 +116,6 @@ shader_parameter/outer_radius = 1.4
 [node name="HUD" type="CanvasLayer" unique_id=320943947]
 script = ExtResource("1_ahhtf")
 
-[node name="BeatLabel" type="Label" parent="." unique_id=1053810022]
-visible = false
-z_index = 2
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -27.0
-offset_top = -39.0
-offset_right = 27.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Beat: 0"
-label_settings = SubResource("LabelSettings_0wfyh")
-
 [node name="ScoreBox" type="TextureRect" parent="." unique_id=2017706477]
 z_index = 2
 offset_left = 16.0
@@ -191,6 +175,7 @@ texture_hover = ExtResource("4_uo2fv")
 [node name="Multiplier" type="Control" parent="." unique_id=1818898960]
 z_index = 3
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -239,5 +224,42 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="LevelProgressionBar" type="TextureProgressBar" parent="." unique_id=1329247974]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -550.0
+offset_top = 50.0
+offset_right = -32.0
+offset_bottom = 53.0
+grow_horizontal = 0
+nine_patch_stretch = true
+texture_under = ExtResource("7_hd3ao")
+texture_progress = ExtResource("8_0i1j5")
+
+[node name="EndMarker" type="TextureRect" parent="LevelProgressionBar" unique_id=1276750651]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_right = 15.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_0i1j5")
+
+[node name="CurrentMarker" type="TextureRect" parent="LevelProgressionBar" unique_id=1079697651]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture = ExtResource("8_mphia")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
