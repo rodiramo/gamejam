@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cqhstsi8ip0ek" path="res://assets/progress_bar/progress_fill.png" id="8_0i1j5"]
 [ext_resource type="Texture2D" uid="uid://dgpud7kgkxqrs" path="res://assets/progress_bar/progress_quill.png" id="8_mphia"]
 [ext_resource type="Texture2D" uid="uid://c7423k2mlserx" path="res://assets/progress_bar/progress_endbar.png" id="9_0i1j5"]
+[ext_resource type="PackedScene" uid="uid://c22i53rjb66x4" path="res://scenes/inputs_display.tscn" id="11_0m4u7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
 font_color = Color(0, 0, 0, 1)
@@ -262,5 +263,11 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 texture = ExtResource("8_mphia")
+
+[node name="Inputs" parent="." unique_id=261066104 instance=ExtResource("11_0m4u7")]
+offset_left = 647.0
+offset_top = 418.0
+offset_right = 687.0
+offset_bottom = 458.0
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
