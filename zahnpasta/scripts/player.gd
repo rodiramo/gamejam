@@ -70,6 +70,9 @@ func take_damage() -> void:
 	current_health -= 1
 	health_updated.emit(current_health, MAX_HEALTH)
 	score_manager.update_combo(0)
+	$AnimationPlayer.play("hit")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("jump")
 
 
 func _on_area_entered(area: Area2D) -> void:
