@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bxwm6geyls5vf" path="res://data/level_config.gd" id="1_jbuu6"]
 [ext_resource type="Script" uid="uid://cu06of5pek0a3" path="res://data/bpm_section.gd" id="1_w2u4b"]
 [ext_resource type="Script" uid="uid://cgw4yku1mc5jk" path="res://data/wave_patterns/wave_pattern.gd" id="3_d5sxj"]
-[ext_resource type="Resource" uid="uid://c6cguhpomadyg" path="res://data/wave_patterns/line.tres" id="4_cxog2"]
-[ext_resource type="Resource" uid="uid://cv3tn32xl4w1v" path="res://data/wave_patterns/diamond.tres" id="5_kieup"]
+[ext_resource type="Resource" uid="uid://bbrmis3ot6g8a" path="res://data/wave_patterns/single_point_middle.tres" id="4_j08vm"]
+[ext_resource type="Resource" uid="uid://b4lbs6rhsf076" path="res://data/wave_patterns/big_pause.tres" id="5_0f6p2"]
+[ext_resource type="Resource" uid="uid://cp23n6682c1w6" path="res://data/wave_patterns/double_notes.tres" id="6_0f6p2"]
 [ext_resource type="Resource" uid="uid://duejhus738qkr" path="res://data/wave_patterns/empty.tres" id="7_q1kna"]
 [ext_resource type="Resource" uid="uid://e24kmoalewhi" path="res://data/wave_patterns/square.tres" id="11_4jffi"]
-[ext_resource type="Resource" uid="uid://dk8j5vfcm477j" path="res://data/wave_patterns/circle_wide.tres" id="12_g1oda"]
 
 [sub_resource type="Resource" id="Resource_2r41h"]
 script = ExtResource("1_w2u4b")
@@ -53,11 +53,11 @@ metadata/_custom_type_script = "uid://cu06of5pek0a3"
 [sub_resource type="Resource" id="Resource_qtay3"]
 script = ExtResource("1_w2u4b")
 bpm = 162.0
-beats = 126
+beats = 124
 metadata/_custom_type_script = "uid://cu06of5pek0a3"
 
 [resource]
 script = ExtResource("1_jbuu6")
 bpm_sections = Array[ExtResource("1_w2u4b")]([SubResource("Resource_2r41h"), SubResource("Resource_w2u4b"), SubResource("Resource_1pu38"), SubResource("Resource_0f6p2"), SubResource("Resource_d5sxj"), SubResource("Resource_cxog2"), SubResource("Resource_kieup"), SubResource("Resource_qtay3")])
-waves = Array[ExtResource("3_d5sxj")]([ExtResource("4_cxog2"), ExtResource("12_g1oda"), ExtResource("7_q1kna"), ExtResource("11_4jffi"), ExtResource("5_kieup")])
+waves = Array[ExtResource("3_d5sxj")]([ExtResource("4_j08vm"), ExtResource("5_0f6p2"), ExtResource("6_0f6p2"), ExtResource("5_0f6p2"), ExtResource("11_4jffi"), ExtResource("7_q1kna"), ExtResource("7_q1kna"), ExtResource("7_q1kna"), ExtResource("6_0f6p2"), ExtResource("6_0f6p2"), ExtResource("7_q1kna"), ExtResource("7_q1kna"), ExtResource("6_0f6p2"), ExtResource("6_0f6p2"), ExtResource("4_j08vm"), ExtResource("5_0f6p2")])
 metadata/_custom_type_script = "uid://bxwm6geyls5vf"
