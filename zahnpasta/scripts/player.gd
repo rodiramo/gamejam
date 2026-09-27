@@ -80,5 +80,5 @@ func _on_level_player_move(allowed: bool) -> void:
 	allowed_to_move = allowed
 
 func _rythm_manager_beat_hit(beat: int) -> void:
-	print("ijijijo")
+	$AnimationPlayer.stop()
 	$AnimationPlayer.play("jump")

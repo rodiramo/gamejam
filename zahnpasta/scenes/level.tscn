@@ -32,6 +32,7 @@ bullet_scene = ExtResource("4_klq6b")
 rythm_manager = NodePath("../RythmManager")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2047268742]
+z_index = -10
 texture = ExtResource("7_wc255")
 centered = false
 
@@ -64,13 +65,14 @@ player = NodePath("../Player")
 script = ExtResource("7_b121j")
 
 [node name="Stream0" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=349253826]
-autoplay = true
+mix_target = 1
 script = ExtResource("8_8c41q")
 
 [node name="Stream1" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=2041139611]
 script = ExtResource("8_8c41q")
 
 [node name="CountInOverlay" parent="." unique_id=1693649273 instance=ExtResource("12_8iemx")]
+visible = false
 
 [node name="PauseOverlay" parent="." unique_id=2010347511 instance=ExtResource("13_64w2a")]
 visible = false

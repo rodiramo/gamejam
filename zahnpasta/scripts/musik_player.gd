@@ -5,7 +5,7 @@ extends Node
 
 var current_Stream0 := true
 var intensity_data = [
-	preload("res://assets/musik/TestBeat.mp3"), 
+	preload("res://assets/musik/Zahnpastatypebeat2.mp3"), 
 	preload("res://assets/musik/test2.mp3"), 
 	preload("res://assets/musik/test.mp3"), 
 	preload("res://assets/musik/test2.mp3")
@@ -21,7 +21,7 @@ func switch(fromStream: Variant, toStream: Variant, intensity: int):
 	var playback_pos = fromStream.audio_player.get_playback_position()
 
 	toStream.audio_player.stream = intensity_data[intensity]
-	toStream.audio_player.volume_linear = 0.0
+	toStream.audio_player.volume_linear = 5.0
 	toStream.audio_player.play(playback_pos)
 
 	var tween = create_tween()

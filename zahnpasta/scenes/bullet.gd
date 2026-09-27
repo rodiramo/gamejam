@@ -26,7 +26,8 @@ func move_to(grid_pos: Vector2, grid: Grid) -> bool:
 	
 func move(grid: Grid) -> bool:
 	if ($AnimationPlayer.current_animation != "spawn"):
-		$AnimationPlayer.play("jump")
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("jump_left")
 	return move_to(_pos + movement, grid)
 	
 func move_to_spawn(lane: int, grid: Grid) -> void:

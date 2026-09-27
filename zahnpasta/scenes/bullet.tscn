@@ -411,10 +411,10 @@ tracks/0/path = NodePath("Sprites/shadow:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(16.23, 0)]
+"values": [Vector2(0, 0), Vector2(-110, 2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -427,6 +427,57 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="Animation_k76ql"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.5),
+"transitions": PackedFloat32Array(1.866066, 0.2679432, 0.2679432),
+"update": 0,
+"values": [Vector2(30, -30), Vector2(10, -50), Vector2(0, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/character:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.031873275, 0.032665312, 0.06374655),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1.4875752, 1.4875752), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06351589, 0.5),
+"transitions": PackedFloat32Array(1, 0.17677663, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.545, 0.545), Vector2(0.75, 0.75)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.5),
+"transitions": PackedFloat32Array(1.7148376, 0.24999979, 0.24999979),
+"update": 0,
+"values": [Vector2(30, 2), Vector2(10, 2), Vector2(0, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_1cfmv"]
@@ -485,6 +536,7 @@ tracks/3/keys = {
 _data = {
 &"RESET": SubResource("Animation_tamys"),
 &"jump": ExtResource("7_26lx3"),
+&"jump_left": SubResource("Animation_k76ql"),
 &"spawn": SubResource("Animation_1cfmv")
 }
 
@@ -497,7 +549,7 @@ shape = SubResource("RectangleShape2D_h08rg")
 [node name="Sprites" type="Node2D" parent="." unique_id=290343263]
 
 [node name="shadow" type="Sprite2D" parent="Sprites" unique_id=954880735]
-position = Vector2(16.23, 0)
+z_index = -1
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_1cfmv")
 
@@ -505,6 +557,7 @@ texture = ExtResource("7_1cfmv")
 position = Vector2(0, -30)
 
 [node name="Sprite1" type="AnimatedSprite2D" parent="Sprites/character" unique_id=1559235955 groups=["bullet_sprites"]]
+visible = false
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"

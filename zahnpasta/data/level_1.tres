@@ -10,6 +10,9 @@
 [ext_resource type="Resource" uid="uid://c7ki66uuyo50i" path="res://data/wave_patterns/diagonal_line.tres" id="8_qtay3"]
 [ext_resource type="Resource" uid="uid://b58ohjvck5whg" path="res://data/wave_patterns/sin_curve.tres" id="9_q1kna"]
 [ext_resource type="Resource" uid="uid://bs2m11ktita3x" path="res://data/wave_patterns/diagonal_lines.tres" id="10_odokq"]
+[ext_resource type="Resource" uid="uid://e24kmoalewhi" path="res://data/wave_patterns/square.tres" id="11_4jffi"]
+[ext_resource type="Resource" uid="uid://dk8j5vfcm477j" path="res://data/wave_patterns/circle_wide.tres" id="12_g1oda"]
+[ext_resource type="Resource" uid="uid://cw2dtj705wlkc" path="res://data/wave_patterns/stairs_down.tres" id="13_btj2g"]
 
 [sub_resource type="Resource" id="Resource_2r41h"]
 script = ExtResource("1_w2u4b")
@@ -61,5 +64,5 @@ metadata/_custom_type_script = "uid://cu06of5pek0a3"
 [resource]
 script = ExtResource("1_jbuu6")
 bpm_sections = Array[ExtResource("1_w2u4b")]([SubResource("Resource_2r41h"), SubResource("Resource_w2u4b"), SubResource("Resource_1pu38"), SubResource("Resource_0f6p2"), SubResource("Resource_d5sxj"), SubResource("Resource_cxog2"), SubResource("Resource_kieup"), SubResource("Resource_qtay3")])
-waves = Array[ExtResource("3_d5sxj")]([ExtResource("4_cxog2"), ExtResource("5_kieup"), ExtResource("6_qtay3"), ExtResource("7_q1kna"), ExtResource("4_cxog2"), ExtResource("8_qtay3"), ExtResource("5_kieup"), ExtResource("9_q1kna"), ExtResource("10_odokq")])
+waves = Array[ExtResource("3_d5sxj")]([ExtResource("4_cxog2"), ExtResource("5_kieup"), ExtResource("6_qtay3"), ExtResource("7_q1kna"), ExtResource("4_cxog2"), ExtResource("8_qtay3"), ExtResource("5_kieup"), ExtResource("9_q1kna"), ExtResource("10_odokq"), ExtResource("11_4jffi"), ExtResource("8_qtay3"), ExtResource("7_q1kna"), ExtResource("12_g1oda"), ExtResource("5_kieup"), ExtResource("6_qtay3"), ExtResource("13_btj2g")])
 metadata/_custom_type_script = "uid://bxwm6geyls5vf"
