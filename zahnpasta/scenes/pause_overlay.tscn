@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bjxekrxr8uu1b" path="res://scripts/pause_overlay.gd" id="1_23pkr"]
 [ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="2_3fhia"]
 [ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="3_fggc0"]
+[ext_resource type="PackedScene" uid="uid://6w0nkpqmq1cx" path="res://scenes/tutorial_overlay.tscn" id="4_hsvgc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0mu0o"]
 font_size = 48
@@ -65,6 +66,38 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Resume"
 
+[node name="TutorialButton" type="TextureButton" parent="Panel" unique_id=109861848]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = 40.5
+offset_right = 105.5
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_3fhia")
+texture_hover = ExtResource("3_fggc0")
+
+[node name="Label" type="Label" parent="Panel/TutorialButton" unique_id=743238525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 2.0
+offset_right = 68.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
+
 [node name="BackToMainMenuButton" type="TextureButton" parent="Panel" unique_id=982873140]
 layout_mode = 1
 anchors_preset = 8
@@ -73,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = 55.0
+offset_top = 119.0
 offset_right = 107.0
-offset_bottom = 118.0
+offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -97,5 +130,10 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="TutorialOverlay" parent="." unique_id=1236968556 instance=ExtResource("4_hsvgc")]
+layer = 2
+visible = false
+
 [connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Panel/BackToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
