@@ -13,6 +13,7 @@ const MAX_HEALTH = 3
 @export var score_manager: ScoreManager
 @export var rythm_manager: RythmManager
 @export var movement_tracker: MovementTracker
+@export var rythm_manager: RythmManager
 
 @onready var audio_players = [
 	$AudioPitchLane0,
