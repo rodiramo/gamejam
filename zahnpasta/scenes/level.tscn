@@ -26,7 +26,6 @@ config = ExtResource("2_olg7q")
 rythem_manager = NodePath("../RythmManager")
 grid = NodePath("../Grid")
 player = NodePath("../Player")
-rythem_manager = NodePath("../RythmManager")
 
 [node name="RythmManager" parent="." unique_id=1274013353 instance=ExtResource("2_w7c3h")]
 
@@ -49,12 +48,11 @@ texture = ExtResource("8_arp2o")
 centered = false
 offset = Vector2(8, 58)
 
-[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid", "score_manager", "rythm_manager") instance=ExtResource("1_2q6dc")]
+[node name="Player" parent="." unique_id=517324794 node_paths=PackedStringArray("grid", "score_manager", "rythm_manager", "movement_tracker") instance=ExtResource("1_2q6dc")]
 grid = NodePath("../Grid")
 score_manager = NodePath("../ScoreManager")
 rythm_manager = NodePath("../RythmManager")
 movement_tracker = NodePath("../MovementTracker")
-rythm_manager = NodePath("../RythmManager")
 
 [node name="Grid" parent="." unique_id=628514153 instance=ExtResource("5_ppgk2")]
 position = Vector2(24, 105)
@@ -97,7 +95,6 @@ autostart = true
 [connection signal="level_ended" from="RythmManager" to="." method="_on_rythm_manager_level_ended"]
 [connection signal="health_updated" from="Player" to="." method="_on_player_health_updated"]
 [connection signal="moved" from="Player" to="." method="_on_player_moved"]
-[connection signal="menu_button_pressed" from="HUD" to="." method="pause_game"]
 [connection signal="back_to_main_menu_pressed" from="PauseOverlay" to="." method="go_to_main_menu"]
 [connection signal="resume_pressed" from="PauseOverlay" to="." method="resume_game"]
 [connection signal="back_to_main_menu_pressed" from="GameEndedOverlay" to="." method="go_to_main_menu"]
