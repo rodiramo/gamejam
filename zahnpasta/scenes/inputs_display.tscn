@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c22i53rjb66x4"]
+
+[ext_resource type="Texture2D" uid="uid://dtwcijyf8pccr" path="res://assets/tutorial/shift_icon.png" id="1_61w6b"]
+[ext_resource type="Texture2D" uid="uid://b4exc0i7g60nt" path="res://assets/tutorial/arrows.png" id="2_5n8av"]
+[ext_resource type="Texture2D" uid="uid://ccc7s1ahb0tee" path="res://assets/tutorial/s.png" id="3_pxvs6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mphia"]
+line_spacing = 12.0
+font_size = 9
+font_color = Color(0.7551838, 0.32361475, 0.044752404, 1)
+
+[node name="Inputs" type="Control" unique_id=261066104]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InputsLabel" type="Label" parent="." unique_id=1611067091]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 6.0
+text = "DOUBLE JUMP"
+label_settings = SubResource("LabelSettings_mphia")
+horizontal_alignment = 2
+vertical_alignment = 3
+
+[node name="ShiftIcon" type="Sprite2D" parent="." unique_id=684168071]
+texture_filter = 1
+position = Vector2(144.86, 0)
+texture = ExtResource("1_61w6b")
+
+[node name="Arrows" type="Sprite2D" parent="." unique_id=245734355]
+texture_filter = 1
+position = Vector2(50, 0)
+texture = ExtResource("2_5n8av")
+
+[node name="S" type="Sprite2D" parent="." unique_id=488812151]
+texture_filter = 1
+texture = ExtResource("3_pxvs6")
