@@ -12,7 +12,6 @@ const ONE_MINUTE = 60.0
 
 @onready var timer = $Timer
 
-
 var _current_beat_interval_sec: float = 1.0
 var _current_beat: int = 0
 var _current_bpm_section: int = 0
@@ -20,6 +19,8 @@ var _beats_before_current_section: int = 0
 var _level_config: LevelConfig
 var _max_beats: int = 0
 
+func _process(delta: float) -> void:
+	print(_level_config.bpm_sections[_current_bpm_section].bpm)
 
 func initialize(level_config: LevelConfig) -> void:
 	_level_config = level_config
@@ -72,7 +73,6 @@ func _has_next_bpm_section() -> bool:
 func _should_change_bpm_section() -> bool:
 	return _level_config.bpm_sections[_current_bpm_section].beats + _beats_before_current_section <= _current_beat
 
-
 func _change_to_next_bpm_section() -> void:
 	_beats_before_current_section = _current_beat
 	_current_bpm_section += 1
@@ -82,6 +82,9 @@ func _change_to_next_bpm_section() -> void:
 func _set_beat_interval_from_current_bpm_section() -> void:
 	_current_beat_interval_sec = ONE_MINUTE / _level_config.bpm_sections[_current_bpm_section].bpm
 	$Timer.wait_time = _current_beat_interval_sec
+	if !$Timer.is_stopped():
+		$Timer.stop()
+		$Timer.start(_current_beat_interval_sec)
 
 
 func _set_max_beats_from_level_config() -> void:

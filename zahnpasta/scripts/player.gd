@@ -82,3 +82,4 @@ func _on_level_player_move(allowed: bool) -> void:
 func _rythm_manager_beat_hit(beat: int, _max_beats: int) -> void:
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("jump")
+	$AudioStreamPlayer2D.play()
