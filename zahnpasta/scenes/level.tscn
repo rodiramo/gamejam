@@ -20,6 +20,7 @@
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
 config = ExtResource("2_olg7q")
+count_in_seconds = null
 
 [node name="MovementTracker" parent="." unique_id=486611869 node_paths=PackedStringArray("rythem_manager", "grid", "player") instance=ExtResource("3_ux5qa")]
 rythem_manager = NodePath("../RythmManager")

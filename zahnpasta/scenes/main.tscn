@@ -9,6 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="7_o6xl0"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_647dn"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sey4q"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node2D" unique_id=1258310054]
 process_mode = 3
 script = ExtResource("1_o5qli")
@@ -86,6 +94,30 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[node name="HighscoreContainer" type="VBoxContainer" parent="MainMenu" unique_id=1108667399]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 101.999985
+offset_top = -137.0
+offset_right = 257.0
+offset_bottom = -95.0
+grow_vertical = 0
+rotation = -0.2508485
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="MainMenu/HighscoreContainer" unique_id=851384494]
+layout_mode = 2
+text = "Highscore"
+label_settings = SubResource("LabelSettings_647dn")
+horizontal_alignment = 1
+
+[node name="Highscore" type="Label" parent="MainMenu/HighscoreContainer" unique_id=2066430385]
+layout_mode = 2
+text = "3000"
+label_settings = SubResource("LabelSettings_sey4q")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
