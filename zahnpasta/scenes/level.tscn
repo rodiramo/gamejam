@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cuc7ce0ofprwu" path="res://scenes/count_in_overlay.tscn" id="12_8iemx"]
 [ext_resource type="PackedScene" uid="uid://b3a5h0pl4afa5" path="res://scenes/pause_overlay.tscn" id="13_64w2a"]
 [ext_resource type="PackedScene" uid="uid://khcy8acak5xq" path="res://scenes/game_ended_overlay.tscn" id="14_fpun6"]
-[ext_resource type="AudioStream" uid="uid://cm0kc4ngqrw8n" path="res://assets/musik/Zahnpastatypebeat2.mp3" id="15_wc255"]
+[ext_resource type="AudioStream" uid="uid://b7ujlq2s3xdt6" path="res://assets/musik/Zahnpastatypebeat2.mp3" id="15_wc255"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
