@@ -282,7 +282,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_ur7pv")
 
 [node name="character" type="AnimatedSprite2D" parent="Sprites" unique_id=1611927915]
-position = Vector2(0, -30)
+position = Vector2(0, -35.850174)
 sprite_frames = SubResource("SpriteFrames_647dn")
 autoplay = "default"
 
