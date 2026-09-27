@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfidqqpdnfvxb" path="res://scenes/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://i7j7hp537bqs" path="res://scripts/level.gd" id="1_w8frs"]
-[ext_resource type="Resource" path="res://data/level_1_AI.tres" id="2_ux5qa"]
+[ext_resource type="Resource" uid="uid://blkydxc26by1p" path="res://data/level_1.tres" id="2_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bes7wh2aww4hl" path="res://scenes/rythm_manager.tscn" id="2_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://hm0t3fuqcmmj" path="res://scenes/bullet_manager.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://dt8f6jsil5x4u" path="res://scenes/movement_tracker.tscn" id="3_ux5qa"]
@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cuc7ce0ofprwu" path="res://scenes/count_in_overlay.tscn" id="12_8iemx"]
 [ext_resource type="PackedScene" uid="uid://b3a5h0pl4afa5" path="res://scenes/pause_overlay.tscn" id="13_64w2a"]
 [ext_resource type="PackedScene" uid="uid://khcy8acak5xq" path="res://scenes/game_ended_overlay.tscn" id="14_fpun6"]
-[ext_resource type="AudioStream" uid="uid://cm0kc4ngqrw8n" path="res://assets/musik/Zahnpastatypebeat2.mp3" id="15_wc255"]
+[ext_resource type="AudioStream" uid="uid://b7ujlq2s3xdt6" path="res://assets/musik/Zahnpastatypebeat2.mp3" id="15_wc255"]
 
 [node name="Level" type="Node2D" unique_id=1064891971]
 script = ExtResource("1_w8frs")
-config = ExtResource("2_ux5qa")
+config = ExtResource("2_olg7q")
 
 [node name="MovementTracker" parent="." unique_id=486611869 node_paths=PackedStringArray("rythem_manager", "grid", "player") instance=ExtResource("3_ux5qa")]
 rythem_manager = NodePath("../RythmManager")

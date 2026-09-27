@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dk247v5dwgh4x" path="res://assets/buttons/start_button_hovered.png" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://c22i53rjb66x4" path="res://scenes/inputs_display.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://6w0nkpqmq1cx" path="res://scenes/tutorial_overlay.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c22i53rjb66x4" path="res://scenes/inputs_display.tscn" id="9_choun"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_647dn"]
 font_size = 12
@@ -93,15 +94,46 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -161.5
-offset_top = -38.0
+offset_top = -54.0
 offset_right = 161.5
-offset_bottom = 48.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_tbgi4")
 texture_hover = ExtResource("5_tefeu")
 stretch_mode = 5
+
+[node name="TutorialButton" type="TextureButton" parent="MainMenu" unique_id=513864256]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = 32.5
+offset_right = 105.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_tefeu")
+texture_hover = ExtResource("7_o6xl0")
+
+[node name="Label" type="Label" parent="MainMenu/TutorialButton" unique_id=936707099]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 2.0
+offset_right = 68.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
 
 [node name="QuitButton" type="TextureButton" parent="MainMenu" unique_id=2056829702]
 anchors_preset = 8
@@ -110,9 +142,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -105.5
-offset_top = 56.5
+offset_top = 104.5
 offset_right = 105.5
-offset_bottom = 119.5
+offset_bottom = 167.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -159,15 +191,26 @@ text = "3000"
 label_settings = SubResource("LabelSettings_sey4q")
 horizontal_alignment = 1
 
-[node name="Inputs" parent="MainMenu" unique_id=261066104 instance=ExtResource("9_85g3d")]
-offset_left = 578.0
-offset_top = 364.0
-offset_right = 618.0
-offset_bottom = 404.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenu" unique_id=1424154009]
 libraries/ = SubResource("AnimationLibrary_choun")
 autoplay = &"pulse"
 
+[node name="Inputs" parent="MainMenu" unique_id=261066104 instance=ExtResource("9_choun")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -128.0
+offset_right = -232.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TutorialOverlay" parent="." unique_id=1236968556 instance=ExtResource("9_85g3d")]
+visible = false
+
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
