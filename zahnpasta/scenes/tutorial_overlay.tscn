@@ -557,13 +557,14 @@ offset_right = 257.0
 offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Dear Peasent,
+text = "Dear Peasant,
 
-I was once a very popular musician,
-tho I am now assss. You have to
-help me get my groove back and
-evade the bad notes (and the toilet
-paper).
+My Name, A. S. S., was once known as the
+greatest bard in the whole kingdom.
+I lost my groove and the king
+banished me.
+Help me dodge the evil wrong notes
+and rise to fame once again.
 
 Have fun!"
 label_settings = SubResource("LabelSettings_647dn")
