@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dgpud7kgkxqrs" path="res://assets/progress_bar/progress_quill.png" id="8_mphia"]
 [ext_resource type="Texture2D" uid="uid://c7423k2mlserx" path="res://assets/progress_bar/progress_endbar.png" id="9_0i1j5"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
 font_color = Color(0, 0, 0, 1)
 
@@ -265,13 +262,5 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 texture = ExtResource("8_mphia")
-
-[node name="Label" type="Label" parent="." unique_id=839204940]
-offset_left = 539.0
-offset_top = 166.0
-offset_right = 579.0
-offset_bottom = 215.0
-text = "BPM
-"
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
