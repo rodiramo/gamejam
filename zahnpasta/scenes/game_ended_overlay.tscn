@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c7sd15y7xqmn7" path="res://scripts/game_ended_overlay.gd" id="1_rdb2h"]
 [ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="2_k0o1u"]
 [ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="3_k81yy"]
+[ext_resource type="AudioStream" uid="uid://cnoeloy70vbjt" path="res://assets/musik/Zahnpastatypeboos.wav" id="4_styl3"]
+[ext_resource type="AudioStream" uid="uid://d4c73dgp1fkoe" path="res://assets/musik/Zahnpastatypecheers.wav" id="5_7tcrt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_647dn"]
 font_size = 48
@@ -167,6 +169,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GameOverPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1823020839]
+stream = ExtResource("4_styl3")
+
+[node name="GameWonPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2100247501]
+stream = ExtResource("5_7tcrt")
 
 [connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Panel/ReplayButton" to="." method="_on_replay_button_pressed"]

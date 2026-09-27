@@ -14,6 +14,8 @@ const MAX_HEALTH = 3
 @export var rythm_manager: RythmManager
 @export var movement_tracker: MovementTracker
 
+@onready var hit_player: AudioStreamPlayer2D = $HitSoundPlayer
+
 @onready var audio_players = [
 	$AudioPitchLane0,
 	$AudioPitchLane1,
@@ -73,6 +75,7 @@ func take_damage() -> void:
 	$AnimationPlayer.play("hit")
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("jump")
+	hit_player.play()
 
 
 func _on_area_entered(area: Area2D) -> void:
