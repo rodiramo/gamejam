@@ -65,6 +65,7 @@ offset_right = 106.0
 offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_k0o1u")
 texture_hover = ExtResource("3_k81yy")
 
@@ -96,6 +97,7 @@ offset_right = 106.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_k0o1u")
 texture_hover = ExtResource("3_k81yy")
 
@@ -127,6 +129,7 @@ offset_right = 106.0
 offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_k0o1u")
 texture_hover = ExtResource("3_k81yy")
 

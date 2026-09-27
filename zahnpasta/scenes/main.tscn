@@ -51,6 +51,7 @@ offset_right = 161.5
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_tbgi4")
 texture_hover = ExtResource("5_tefeu")
 stretch_mode = 5
@@ -67,6 +68,7 @@ offset_right = 105.5
 offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("6_tefeu")
 texture_hover = ExtResource("7_o6xl0")
 

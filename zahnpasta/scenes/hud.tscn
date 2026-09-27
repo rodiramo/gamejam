@@ -169,6 +169,7 @@ offset_top = -56.0
 offset_right = 56.0
 offset_bottom = -16.0
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_6fi6k")
 texture_hover = ExtResource("4_uo2fv")
 
