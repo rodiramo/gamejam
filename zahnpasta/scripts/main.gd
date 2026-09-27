@@ -1,6 +1,11 @@
 extends Node2D
 
 
+func _ready() -> void:
+	var highscore := Highscores.get_current_highest_score()
+	$MainMenu/HighscoreContainer/Highscore.text = "%d" % highscore
+
+
 func _on_start_button_pressed() -> void:
 	ReplaySettings.ready_to_play()
 	get_tree().paused = false
