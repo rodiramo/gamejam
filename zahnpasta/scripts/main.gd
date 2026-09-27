@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _on_start_button_pressed() -> void:
+	ReplaySettings.ready_to_play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/level.tscn")
 
