@@ -19,9 +19,6 @@ var _beats_before_current_section: int = 0
 var _level_config: LevelConfig
 var _max_beats: int = 0
 
-func _process(delta: float) -> void:
-	print(_level_config.bpm_sections[_current_bpm_section].bpm)
-
 func initialize(level_config: LevelConfig) -> void:
 	_level_config = level_config
 	_current_beat = 0

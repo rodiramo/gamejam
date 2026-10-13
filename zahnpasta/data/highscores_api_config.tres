@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HighscoresApiConfig" format=3 uid="uid://e0ngpd4ebhvk"]
+
+[ext_resource type="Script" uid="uid://dvhpfhi3g7hum" path="res://data/highscores_api_config.gd" id="1_kei6d"]
+
+[resource]
+script = ExtResource("1_kei6d")
+metadata/_custom_type_script = "uid://dvhpfhi3g7hum"

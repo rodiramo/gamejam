@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dwjdr73cjoj56"]
+
+[ext_resource type="Script" uid="uid://6vsogbqe2vq3" path="res://scripts/highscore_list_item.gd" id="1_gprp1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1r5n"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3c600"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="HighscoreListItem" type="HBoxContainer" unique_id=1422409323]
+custom_minimum_size = Vector2(0, 30)
+custom_maximum_size = Vector2(-1, 30)
+script = ExtResource("1_gprp1")
+
+[node name="RankLabel" type="Label" parent="." unique_id=1324640981]
+custom_minimum_size = Vector2(64, 20)
+custom_maximum_size = Vector2(64, 20)
+layout_mode = 2
+text = "999."
+label_settings = SubResource("LabelSettings_y1r5n")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="." unique_id=1309048560]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="." unique_id=1935205276]
+custom_minimum_size = Vector2(150, 20)
+custom_maximum_size = Vector2(150, 20)
+layout_mode = 2
+text = "player one"
+label_settings = SubResource("LabelSettings_3c600")
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="." unique_id=1446469578]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=70115616]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1.000.000"
+label_settings = SubResource("LabelSettings_3c600")
+horizontal_alignment = 2
+vertical_alignment = 1
