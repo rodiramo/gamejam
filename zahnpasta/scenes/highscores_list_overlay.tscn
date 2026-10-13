@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://i1nabu520e31"]
+
+[ext_resource type="Texture2D" uid="uid://vk2x337xq5qd" path="res://assets/tutorial/tutorial_bg.png" id="1_3c600"]
+[ext_resource type="Script" uid="uid://crfg0o1wbsnx6" path="res://scripts/highscores_list_overlay.gd" id="1_y1r5n"]
+[ext_resource type="Texture2D" uid="uid://xuf8fbbmxfng" path="res://assets/buttons/button_close.png" id="3_52t25"]
+[ext_resource type="Texture2D" uid="uid://c23f7fm53rp3l" path="res://assets/buttons/buttons.png" id="3_k3dxd"]
+[ext_resource type="Texture2D" uid="uid://b2spaujry4nac" path="res://assets/buttons/button_hover.png" id="4_52t25"]
+[ext_resource type="Texture2D" uid="uid://qejg8ipy2fqi" path="res://assets/buttons/button_close_hover.png" id="4_qlfv7"]
+[ext_resource type="PackedScene" uid="uid://dwjdr73cjoj56" path="res://scenes/highscore_list_item.tscn" id="5_bqyg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqyg0"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3c600"]
+font_size = 11
+
+[node name="HighscoresListOverlay" type="CanvasLayer" unique_id=344610010]
+script = ExtResource("1_y1r5n")
+
+[node name="Panel" type="Panel" parent="." unique_id=1274025572]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Panel" unique_id=710167399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = 85.0
+offset_right = -102.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3c600")
+
+[node name="Title" type="Label" parent="Panel" unique_id=1087752817]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.5
+offset_top = 118.0
+offset_right = 130.5
+offset_bottom = 124.0
+grow_horizontal = 2
+text = "Highscores"
+label_settings = SubResource("LabelSettings_bqyg0")
+
+[node name="CloseButton" type="TextureButton" parent="Panel" unique_id=1151086877]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = 64.0
+offset_right = -98.0
+offset_bottom = 97.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_52t25")
+texture_hover = ExtResource("4_qlfv7")
+
+[node name="RefreshButton" type="TextureButton" parent="Panel" unique_id=1708289675]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -242.0
+offset_top = 93.0
+offset_right = -121.0
+offset_bottom = 139.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_k3dxd")
+texture_hover = ExtResource("4_52t25")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/RefreshButton" unique_id=512087653]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Refresh"
+label_settings = SubResource("LabelSettings_3c600")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=465897726]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 149.0
+offset_right = 725.0
+offset_bottom = 379.0
+
+[node name="List" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=316354321]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HighscoreListItem" parent="Panel/ScrollContainer/List" unique_id=1422409323 instance=ExtResource("5_bqyg0")]
+layout_mode = 2
+
+[node name="HighscoreListItem2" parent="Panel/ScrollContainer/List" unique_id=1992992277 instance=ExtResource("5_bqyg0")]
+layout_mode = 2
+
+[node name="HighscoreListItem3" parent="Panel/ScrollContainer/List" unique_id=950635572 instance=ExtResource("5_bqyg0")]
+layout_mode = 2
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/RefreshButton" to="." method="_on_refresh_button_pressed"]

@@ -76,14 +76,10 @@ func end_game(state: State) -> void:
 	get_tree().paused = true
 	var score = score_manager.current_score()
 	
-	# Ignore the name for now
-	var highscore_entry := Highscores.create_entry("", score)
-	var is_new_highscore := Highscores.add_score(highscore_entry)
-	
 	if state == State.GAME_WON:
-		game_ended_overlay.set_game_won_state(score, is_new_highscore)
+		game_ended_overlay.set_game_won_state(score)
 	elif state == State.GAME_OVER:
-		game_ended_overlay.set_game_over_state(score, is_new_highscore)
+		game_ended_overlay.set_game_over_state(score)
 	else:
 		get_tree().exit(1)
 
